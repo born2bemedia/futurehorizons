@@ -38,9 +38,9 @@ const Header = () => {
             </nav>
 
             <div className="account">
-              <Link href="#">Sign up</Link>
+              <Link href="#">Sign In</Link>
               <span className="divider">|</span>
-              <Link href="#">Log in</Link>
+              <Link href="#">Sign up</Link>
             </div>
 
             <span onClick={() => menuOpen()} className="menu-btn">
@@ -65,9 +65,9 @@ const Header = () => {
             <Link href="#">Contact us</Link>
           </nav>
           <div className="account">
-            <Link href="#">Sign up</Link>
+            <Link href="#">Sign In</Link>
             <span className="divider">|</span>
-            <Link href="#">Log in</Link>
+            <Link href="#">Sign up</Link>
           </div>
         </div>
       </div>

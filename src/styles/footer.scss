@@ -1,0 +1,112 @@
+footer {
+  background: #171717;
+  border-radius: 24px 24px 0 0;
+  padding-top: 80px;
+  @media (max-width: 992px) {
+    padding-top: 40px;
+  }
+  .foot-copy {
+    border-top: 1px solid #ffffff33;
+    padding: 32px 0;
+    color: #ffffff80;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .footer-row {
+    display: flex;
+    margin-bottom: 32px;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+    .logo {
+      a {
+        display: flex;
+      }
+      p {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+        margin: 16px 0 24px 0;
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+        a {
+          color: #fff;
+        }
+        .account{
+            display: flex;
+            gap:8px;
+        }
+      }
+    }
+    .left {
+      width: 50%;
+      padding-right: 30px;
+      border-right: 1px solid #ffffff33;
+      @media (max-width: 992px) {
+        width: 100%;
+        padding-right: 0;
+        padding-bottom: 30px;
+        border:none;
+        border-bottom: 1px solid #ffffff33;
+      }
+      .soc{
+        display: flex;
+        gap:16px;
+        margin-top: 24px;
+        a{
+            display: flex;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      padding-left: 30px;
+      justify-content: space-between;
+      width: 50%;
+      @media (max-width: 992px) {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 30px;
+        flex-wrap: wrap;
+        row-gap: 32px;
+      }
+      ul{
+        @media (max-width: 992px) {
+            width: 50%;
+            &:last-child{
+                width: 100%;
+                flex-wrap: wrap;
+                height: 60px;
+                li{
+                    width: 50%;
+                }
+            }
+        }
+        li{
+            font-size: 14px;
+            a{
+                font-size: 14px;
+            }
+        }
+      }
+    }
+  }
+}

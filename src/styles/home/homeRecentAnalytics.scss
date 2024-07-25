@@ -1,0 +1,117 @@
+.home-recent {
+  margin: 120px 0;
+  @media (max-width: 992px) {
+    margin: 100px 0;
+  }
+  &__body {
+    padding: 32px 0;
+    border-top: 1px solid #89a6a34d;
+    border-bottom: 1px solid #89a6a34d;
+    display: flex;
+    gap: 30px;
+    @media (max-width: 992px) {
+      padding: 24px 0;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .left {
+      width: 450px;
+      padding-right: 30px;
+      border-right: 1px solid #89a6a34d;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 30px;
+      @media (max-width: 992px) {
+        overflow-x: auto;
+        width: 100%;
+        padding-right: 0;
+        border: none;
+        align-items: center;
+      }
+      .bordered-button {
+        border: 1px solid #222222;
+        color: #222222;
+        &:hover {
+          border-color: #ff8744;
+          background: #ff8744;
+        }
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+      }
+      h2 {
+        margin: 0 0 8px 0;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        color: #222222;
+        @media (max-width: 992px) {
+          font-size: 32px;
+          text-align: center;
+        }
+      }
+    }
+    .right {
+      width: calc(100% - 480px);
+      display: flex;
+      gap: 30px;
+      @media (max-width: 992px) {
+        width: 100%;
+        flex-direction: column;
+      }
+      > div {
+        width: calc(50% - 15px);
+        background: #f5f5f5;
+        border-radius: 24px;
+        gap: 32px;
+        padding: 32px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        @media (max-width: 992px) {
+            width: 100%;
+        }
+        .article-top {
+          width: 100%;
+          .thumb {
+            border-radius: 24px;
+            background-position: center;
+            background-size: cover;
+            height: 235px;
+            display: block;
+            width: 100%;
+            margin-bottom: 32px;
+          }
+          h3{
+            color: #EB6418;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.2;
+            text-align: left;
+            margin: 0;
+          }
+          h2{
+            color: #222222;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.2;
+            text-align: left;
+            margin: 8px 0;
+          }
+          p{
+            color: #222222;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.2;
+            text-align: left;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
