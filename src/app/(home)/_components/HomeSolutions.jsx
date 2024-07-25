@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/app/utils/animations";
 import Link from "next/link";
-import ButtonArrow from "@/icons/buttonArrow";
+import ButtonArrow from "@/icons/ButtonArrow";
 import SolutionTab1 from "./solutionsTabs/SolutionTab1";
 import SolutionTab2 from "./solutionsTabs/SolutionTab2";
 import SolutionTab3 from "./solutionsTabs/SolutionTab3";
