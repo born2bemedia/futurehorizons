@@ -29,7 +29,8 @@ const HomeSolutions = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            Your Challenges, <span>Our Solutions</span>
+            Your Challenges,
+            <span>Our Solutions</span>
           </motion.h2>
 
           <div className="tabs">
