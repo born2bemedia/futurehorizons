@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={dmsans.className}>
         <Header />
-        <main>{children}</main>
+        <main className="site">{children}</main>
         <Footer />
       </body>
     </html>
