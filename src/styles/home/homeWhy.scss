@@ -1,43 +1,45 @@
+@import "../mixin.scss";
+
 .home-why {
-  margin: 120px 0;
-  @media (max-width: 992px) {
-    margin: 100px 0;
+  margin: rem(120) 0;
+  @media (max-width: rem(992)) {
+    margin: rem(100) 0;
   }
-  &__body{
+  &__body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 120px 24px;
-    border-radius: 24px;
+    padding: rem(120) rem(24);
+    border-radius: rem(24);
     background-size: cover;
     background-position: center;
     background-image: url(/images/home/whyBack.webp);
-    @media (max-width: 992px) {
-        padding: 100px 24px;
+    @media (max-width: rem(992)) {
+      padding: rem(100) rem(24);
     }
-    h2{
-        color: #fff;
-        font-size: 48px;
-        font-weight: 600;
-        line-height: 1.2;
-        text-align: center;
-        margin: 0 0 8px 0;
-        @media (max-width: 992px) {
-            font-size: 32px;
-        }
+    h2 {
+      color: #fff;
+      font-size: rem(48);
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 rem(8) 0;
+      @media (max-width: rem(992)) {
+        font-size: rem(32);
+      }
     }
-    p{
-        color: #fff;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 1.2;
-        text-align: center;
-        margin: 0 0 64px 0;
-        @media (max-width: 992px) {
-            br{
-                display: none;
-            }
+    p {
+      color: #fff;
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.2;
+      text-align: center;
+      margin: 0 0 rem(64) 0;
+      @media (max-width: rem(992)) {
+        br {
+          display: none;
         }
+      }
     }
   }
 }

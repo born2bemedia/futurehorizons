@@ -1,11 +1,13 @@
+@import "../mixin.scss";
+
 .home-how-we-hack {
-  margin: 120px 0;
-  @media (max-width: 992px) {
-    margin: 100px 0;
+  margin: rem(120) 0;
+  @media (max-width: rem(992)) {
+    margin: rem(100) 0;
   }
   h2 {
-    margin: 0 0 32px 0;
-    font-size: 48px;
+    margin: 0 0 rem(32) 0;
+    font-size: rem(48);
     font-weight: 600;
     line-height: 1.2;
     text-align: left;
@@ -13,8 +15,8 @@
     span {
       color: #222222;
     }
-    @media (max-width: 992px) {
-      font-size: 32px;
+    @media (max-width: rem(992)) {
+      font-size: rem(32);
       text-align: center;
     }
   }
@@ -22,52 +24,52 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: rem(32);
     align-items: flex-start;
     > div {
       .row {
         display: flex;
-        padding: 24px 0;
-        border-top: 1px solid #89a6a34d;
+        padding: rem(24) 0;
+        border-top: rem(1) solid #89a6a34d;
         &:last-child {
-          border-bottom: 1px solid #89a6a34d;
+          border-bottom: rem(1) solid #89a6a34d;
         }
-        @media (max-width: 992px) {
+        @media (max-width: rem(992)) {
           flex-direction: column;
-          gap: 16px;
+          gap: rem(16);
         }
         > span {
           color: #9e9e9e;
-          font-size: 24px;
+          font-size: rem(24);
           font-weight: 500;
           line-height: 1.2;
           text-align: left;
           width: 10%;
-          @media (max-width: 992px) {
+          @media (max-width: rem(992)) {
             width: 100%;
           }
         }
         h3 {
           margin: 0;
           color: #222222;
-          font-size: 24px;
+          font-size: rem(24);
           font-weight: 600;
           line-height: 1.2;
           text-align: left;
           width: 34%;
-          @media (max-width: 992px) {
+          @media (max-width: rem(992)) {
             width: 100%;
           }
         }
         p {
           margin: 0;
           color: #222222;
-          font-size: 16px;
+          font-size: rem(16);
           font-weight: 400;
           line-height: 1.2;
           text-align: left;
           width: 56%;
-          @media (max-width: 992px) {
+          @media (max-width: rem(992)) {
             width: 100%;
           }
         }

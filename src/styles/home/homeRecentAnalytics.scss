@@ -1,29 +1,31 @@
+@import "../mixin.scss";
+
 .home-recent {
-  margin: 120px 0;
-  @media (max-width: 992px) {
-    margin: 100px 0;
+  margin: rem(120) 0;
+  @media (max-width: rem(992)) {
+    margin: rem(100) 0;
   }
   &__body {
-    padding: 32px 0;
-    border-top: 1px solid #89a6a34d;
-    border-bottom: 1px solid #89a6a34d;
+    padding: rem(32) 0;
+    border-top: rem(1) solid #89a6a34d;
+    border-bottom: rem(1) solid #89a6a34d;
     display: flex;
-    gap: 30px;
-    @media (max-width: 992px) {
-      padding: 24px 0;
+    gap: rem(30);
+    @media (max-width: rem(992)) {
+      padding: rem(24) 0;
       flex-direction: column;
-      gap: 24px;
+      gap: rem(24);
     }
     .left {
-      width: 450px;
-      padding-right: 30px;
-      border-right: 1px solid #89a6a34d;
+      width: rem(450);
+      padding-right: rem(30);
+      border-right: rem(1) solid #89a6a34d;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 30px;
-      @media (max-width: 992px) {
+      gap: rem(30);
+      @media (max-width: rem(992)) {
         overflow-x: auto;
         width: 100%;
         padding-right: 0;
@@ -31,80 +33,80 @@
         align-items: center;
       }
       .bordered-button {
-        border: 1px solid #222222;
+        border: rem(1) solid #222222;
         color: #222222;
         &:hover {
           border-color: #ff8744;
           background: #ff8744;
         }
-        @media (max-width: 992px) {
-            width: 100%;
+        @media (max-width: rem(992)) {
+          width: 100%;
         }
       }
       h2 {
-        margin: 0 0 8px 0;
-        font-size: 48px;
+        margin: 0 0 rem(8) 0;
+        font-size: rem(48);
         font-weight: 600;
         line-height: 1.2;
         text-align: left;
         color: #222222;
-        @media (max-width: 992px) {
-          font-size: 32px;
+        @media (max-width: rem(992)) {
+          font-size: rem(32);
           text-align: center;
         }
       }
     }
     .right {
-      width: calc(100% - 480px);
+      width: calc(100% - rem(480));
       display: flex;
-      gap: 30px;
-      @media (max-width: 992px) {
+      gap: rem(30);
+      @media (max-width: rem(992)) {
         width: 100%;
         flex-direction: column;
       }
       > div {
-        width: calc(50% - 15px);
+        width: calc(50% - rem(15));
         background: #f5f5f5;
-        border-radius: 24px;
-        gap: 32px;
-        padding: 32px;
+        border-radius: rem(24);
+        gap: rem(32);
+        padding: rem(32);
         display: flex;
         justify-content: space-between;
         flex-direction: column;
         align-items: flex-start;
-        @media (max-width: 992px) {
-            width: 100%;
+        @media (max-width: rem(992)) {
+          width: 100%;
         }
         .article-top {
           width: 100%;
           .thumb {
-            border-radius: 24px;
+            border-radius: rem(24);
             background-position: center;
             background-size: cover;
-            height: 235px;
+            height: rem(235);
             display: block;
             width: 100%;
-            margin-bottom: 32px;
+            margin-bottom: rem(32);
           }
-          h3{
-            color: #EB6418;
-            font-size: 16px;
+          h3 {
+            color: #eb6418;
+            font-size: rem(16);
             font-weight: 400;
             line-height: 1.2;
             text-align: left;
             margin: 0;
           }
-          h2{
+          h2 {
             color: #222222;
-            font-size: 24px;
+            font-size: rem(24);
             font-weight: 600;
             line-height: 1.2;
             text-align: left;
-            margin: 8px 0;
+            margin: rem(8) 0;
           }
-          p{
+          p {
             color: #222222;
-            font-size: 16px;
+            font-size: rem(16);
             font-weight: 400;
             line-height: 1.2;
             text-align: left;

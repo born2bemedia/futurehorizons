@@ -1,42 +1,44 @@
+@import "../mixin.scss";
+
 .home-tools {
-  margin: 120px 0;
-  @media (max-width: 992px) {
-    margin: 100px 0;
+  margin: rem(120) 0;
+  @media (max-width: rem(992)) {
+    margin: rem(100) 0;
   }
   &__body {
-    border-radius: 24px;
+    border-radius: rem(24);
     background: #f5f5f5;
-    padding: 120px 0;
-    @media (max-width: 992px) {
-      padding: 100px 0;
+    padding: rem(120) 0;
+    @media (max-width: rem(992)) {
+      padding: rem(100) 0;
     }
     h2 {
-      margin: 0 0 48px 0;
-      font-size: 48px;
+      margin: 0 0 rem(48) 0;
+      font-size: rem(48);
       font-weight: 600;
       line-height: 1.2;
       text-align: center;
       color: #222222;
-      @media (max-width: 992px) {
-        font-size: 32px;
+      @media (max-width: rem(992)) {
+        font-size: rem(32);
         text-align: center;
       }
     }
 
-    .sliderContainer{
-        &:last-child{
-            margin-top: 64px;
-            @media (max-width: 992px) {
-                margin-top: 32px;
-            }
+    .sliderContainer {
+      &:last-child {
+        margin-top: rem(64);
+        @media (max-width: rem(992)) {
+          margin-top: rem(32);
         }
-        .slick-slide{
-            padding: 0 32px;
-            img{
-                height: 60px;
-                display: block;
-            }
+      }
+      .slick-slide {
+        padding: 0 rem(32);
+        img {
+          height: rem(60);
+          display: block;
         }
+      }
     }
   }
 }

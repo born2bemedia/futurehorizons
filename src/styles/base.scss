@@ -10,20 +10,20 @@
 
 body {
   margin: 0;
-  background: #FFFFFF;
-  @media (max-width: 992px) {
+  background: #ffffff;
+  @media (max-width: rem(992)) {
   }
   &.no-scroll {
     overflow: hidden;
-    padding-right: 12px;
-    @media (max-width: 992px) {
+    padding-right: rem(12);
+    @media (max-width: rem(992)) {
       padding-right: 0;
     }
   }
 
   &::-webkit-scrollbar {
     background: transparent;
-    width: 10px;
+    width: rem(10);
   }
 
   &::-webkit-scrollbar-track {
@@ -31,8 +31,8 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #EB6418;
-    border-radius: 100px;
+    background-color: #eb6418;
+    border-radius: rem(100);
   }
 }
 * {
@@ -46,24 +46,24 @@ img {
 a {
   text-decoration: none;
   outline: none !important;
-  @media (max-width: 992px) {
+  @media (max-width: rem(992)) {
     outline: none !important;
   }
 }
 
 .section-title {
   color: var(--2, #282828);
-  font-size: 48px;
+  font-size: rem(48);
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
   margin: 0;
-  @media (max-width: 992px) {
-    font-size: 40px;
+  @media (max-width: rem(992)) {
+    font-size: rem(40);
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: rem(992)) {
   /*html, body{
 		overflow-x:hidden;
 	}*/
@@ -71,7 +71,7 @@ a {
     display: none !important;
   }
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: rem(992)) {
   .iti.iti--container {
     z-index: 1999999999 !important;
   }
@@ -83,12 +83,12 @@ a {
 ._container {
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 rem(16);
   width: 100%;
-  @media (max-width: 1375px) {
+  @media (max-width: rem(1375)) {
     max-width: $md1 + px;
   }
-  @media (min-width: 1600px) {
+  @media (min-width: rem(1600)) {
     max-width: $maxWidth;
   }
 }
@@ -107,46 +107,46 @@ a {
   }
 }
 
-.bordered-button{
-  border: 1px solid #FFFFFF;
-  border-radius: 8px;
-  height: 40px;
-  padding: 0 24px;
-  font-size: 14px;
+.bordered-button {
+  border: rem(1) solid #ffffff;
+  border-radius: rem(8);
+  height: rem(40);
+  padding: 0 rem(24);
+  font-size: rem(14);
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFFFFF;
-  gap:8px;
-  &:hover{
-    border-color: #FF8744;
-    background: #FF8744;
+  color: #ffffff;
+  gap: rem(8);
+  &:hover {
+    border-color: #ff8744;
+    background: #ff8744;
   }
 }
 
-.orange-button{
-  border: 1px solid #EB6418;
-  background-color: #EB6418;
-  border-radius: 8px;
-  height: 40px;
-  padding: 0 24px;
-  font-size: 14px;
+.orange-button {
+  border: rem(1) solid #eb6418;
+  background-color: #eb6418;
+  border-radius: rem(8);
+  height: rem(40);
+  padding: 0 rem(24);
+  font-size: rem(14);
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFFFFF;
-  &:hover{
-    border-color: #FF8744;
-    background: #FF8744;
+  color: #ffffff;
+  &:hover {
+    border-color: #ff8744;
+    background: #ff8744;
   }
-  svg{
-    path{
+  svg {
+    path {
       stroke: #fff;
     }
   }

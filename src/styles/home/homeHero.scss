@@ -1,39 +1,41 @@
-.home-hero{
-    padding: 270px 0;
-    //background-image: url(/images/home/homeHero.webp);
-    background-position: left center;
-    background-size: cover;
-    border-radius: 0 0 24px 24px;
-    @media (max-width:992px){
-        padding: 190px 0 100px 0;
-        background-image: url(/images/home/homeHero.webp);
-        background-position: bottom center;
+@import "../mixin.scss";
+
+.home-hero {
+  padding: rem(270) 0;
+  //background-image: url(/images/home/homeHero.webp);
+  background-position: left center;
+  background-size: cover;
+  border-radius: 0 0 rem(24) rem(24);
+  @media (max-width: rem(992)) {
+    padding: rem(190) 0 rem(100) 0;
+    background-image: url(/images/home/homeHero.webp);
+    background-position: bottom center;
+  }
+  h2 {
+    font-size: rem(32);
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0 0 rem(10) 0;
+    color: #eb6418;
+    @media (max-width: rem(992)) {
+      font-size: rem(24);
     }
-    h2{
-        font-size: 32px;
-        font-weight: 300;
-        line-height: 1.2;
-        text-align: left;
-        margin: 0 0 10px 0;
-        color: #EB6418;
-        @media (max-width:992px){
-            font-size: 24px;
-        }
+  }
+  h1 {
+    color: #ffffff;
+    font-size: rem(80);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0 0 rem(64) 0;
+    @media (max-width: rem(992)) {
+      font-size: rem(56);
+      margin-bottom: rem(50);
     }
-    h1{
-        color: #FFFFFF;
-        font-size: 80px;
-        font-weight: 600;
-        line-height: 1.2;
-        text-align: left;
-        margin: 0 0 64px 0;
-        @media (max-width:992px){
-            font-size: 56px;
-            margin-bottom: 50px;
-        }
-    }
-    .buttons-wrap{
-        display: flex;
-        gap:30px;
-    }
+  }
+  .buttons-wrap {
+    display: flex;
+    gap: rem(30);
+  }
 }
