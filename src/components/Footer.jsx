@@ -21,7 +21,7 @@ const Footer = () => {
                 <Link href="/">
                   <img src="/images/foot-logo.svg" />
                 </Link>
-                <p>Data-Driven Marketing for Businesses16</p>
+                <p></p>
               </div>
               <ul>
                 <li>Address:</li>
