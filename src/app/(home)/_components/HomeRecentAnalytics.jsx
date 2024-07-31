@@ -18,7 +18,7 @@ const HomeRecentAnalytics = () => {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              Recent Analytics from Next Wave Ad Team
+              Recent Analytics from the Next Wave Ad Team
             </motion.h2>
             <Link href="#" className="bordered-button">
               <span>Explore all solutions</span>
