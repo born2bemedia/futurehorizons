@@ -18,7 +18,7 @@ const HomeHero = () => {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              Brand name
+              Next Wave Ad
             </motion.h2>
             <motion.h1
               initial="hidden"
