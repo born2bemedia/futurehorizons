@@ -59,18 +59,24 @@ function OrderPopup() {
     setStatus({ success: true });
     console.log("submit");
     /*
+    const valuesWithService = {
+      ...values,
+      service: serviceValue,
+    };
+
+    console.log("Form values being submitted: ", valuesWithService);
+
     try {
       const response = await fetch("/api/emails/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(valuesWithService),
       });
-      console.log(JSON.stringify(values));
+
       if (response.ok) {
         setTimeout(() => {
-          console.log(JSON.stringify(values, null, 2));
           setSubmitting(false);
           resetForm();
           setStatus({ success: true });

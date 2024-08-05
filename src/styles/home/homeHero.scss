@@ -1,5 +1,11 @@
 @import "../mixin.scss";
 
+.site {
+  > .react-parallax {
+    border-radius: 0 0 rem(24) rem(24);
+  }
+}
+
 .home-hero {
   padding: rem(270) 0;
   //background-image: url(/images/home/homeHero.webp);
@@ -8,10 +14,10 @@
   border-radius: 0 0 rem(24) rem(24);
   @media (max-width: rem(992)) {
     padding: rem(190) 0 rem(100) 0;
-    background-image: url(/images/home/homeHero.webp);
+    //background-image: url(/images/home/homeHero.webp);
     background-position: bottom center;
   }
-  img{
+  img {
     max-width: unset;
   }
   h2 {

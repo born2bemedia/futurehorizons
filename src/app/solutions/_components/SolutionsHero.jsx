@@ -7,7 +7,7 @@ import { Parallax } from "react-parallax";
 
 const SolutionsHero = () => {
   return (
-    <Parallax bgImage="/images/home/homeHero.webp" strength={-50}>
+    <Parallax bgImage="/images/solutions/solutionsHero.webp" strength={-50}>
       <section className="solutions-hero">
         <div className="_container">
           <div className="solutions-hero__body">
