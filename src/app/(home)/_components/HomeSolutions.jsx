@@ -2,7 +2,7 @@
 import "@/styles/home/homeSolutions.scss";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { fadeInUp } from "@/app/utils/animations";
+import { fadeInUp } from "@/utils/animations";
 import Link from "next/link";
 import ButtonArrow from "@/icons/ButtonArrow";
 import SolutionTab1 from "./solutionsTabs/SolutionTab1";
@@ -73,7 +73,7 @@ const HomeSolutions = () => {
                   Low Lead to Customer Conversion
                 </button>
               </div>
-              <Link href="#" className="bordered-button">
+              <Link href="/solutions" className="bordered-button">
                 <span>Explore all solutions</span>
                 <ButtonArrow />
               </Link>

@@ -13,9 +13,20 @@
     border-radius: rem(24);
     background-size: cover;
     background-position: center;
-    background-image: url(/images/home/whyBack.webp);
+    //background-image: url(/images/home/whyBack.webp);
     @media (max-width: rem(992)) {
       padding: rem(100) rem(24);
+    }
+    img{
+      max-width: unset;
+      top:0;
+      height: 130%!important;
+      width: auto !important;
+    }
+    .react-parallax-content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     h2 {
       color: #fff;

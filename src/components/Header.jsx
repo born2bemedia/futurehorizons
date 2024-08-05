@@ -28,7 +28,7 @@ const Header = () => {
             </Link>
 
             <nav>
-              <Link href="#">Solutions</Link>
+              <Link href="/solutions">Solutions</Link>
               <Link href="#">All services</Link>
               <Link href="#">Experts</Link>
               <Link href="#">Get a proposal</Link>
@@ -56,7 +56,7 @@ const Header = () => {
       <div className={`menu-wrap ${menuOpened ? "opened" : ""}`}>
         <div className="_container">
           <nav>
-            <Link href="#">Solutions</Link>
+            <Link href="/solutions">Solutions</Link>
             <Link href="#">All services</Link>
             <Link href="#">Experts</Link>
             <Link href="#">Get a proposal</Link>

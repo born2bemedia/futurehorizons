@@ -11,6 +11,9 @@
     background-image: url(/images/home/homeHero.webp);
     background-position: bottom center;
   }
+  img{
+    max-width: unset;
+  }
   h2 {
     font-size: rem(32);
     font-weight: 300;

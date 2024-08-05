@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { fadeInUp } from "@/app/utils/animations";
+import { fadeInUp } from "@/utils/animations";
 import Link from "next/link";
+import OrderButton from "@/components/OrderButton";
 
 const SolutionTab3 = () => {
   return (
@@ -28,9 +29,11 @@ const SolutionTab3 = () => {
           </li>
         </ul>
       </div>
-      <Link href="#" className="orange-button">
-        Order solution
-      </Link>
+      <OrderButton
+        className={"orange-button"}
+        text={"Order solution"}
+        service={"Insufficient Website Traffic"}
+      />
     </div>
   );
 };

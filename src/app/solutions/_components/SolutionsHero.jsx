@@ -1,24 +1,23 @@
 "use client";
 import React from "react";
-import "@/styles/home/homeHero.scss";
 import { fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Parallax } from 'react-parallax';
+import { Parallax } from "react-parallax";
 
-const HomeHero = () => {
+const SolutionsHero = () => {
   return (
     <Parallax bgImage="/images/home/homeHero.webp" strength={-50}>
-      <section className="home-hero">
+      <section className="solutions-hero">
         <div className="_container">
-          <div className="home-hero__body">
+          <div className="solutions-hero__body">
             <motion.h2
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              Next Wave Ad
+              Solutions
             </motion.h2>
             <motion.h1
               initial="hidden"
@@ -26,23 +25,23 @@ const HomeHero = () => {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              Data-driven <br />
-              Marketing Solutions
+              Comprehensive Solutions
+              <br />
+              for Digital Marketing Challenges
             </motion.h1>
-            <motion.div
+            <motion.p
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
               className="buttons-wrap"
             >
-              <Link href="#" className="bordered-button">
-                Explore services
-              </Link>
-              <Link href="#" className="orange-button">
-                Get a proposal
-              </Link>
-            </motion.div>
+              No matter the challenge—whether it's poor reputation, low search
+              visibility, or launching a new brand—our solutions cover every
+              <br />
+              aspect of digital marketing. We make the impossible possible for
+              your business.
+            </motion.p>
           </div>
         </div>
       </section>
@@ -50,4 +49,4 @@ const HomeHero = () => {
   );
 };
 
-export default HomeHero;
+export default SolutionsHero;

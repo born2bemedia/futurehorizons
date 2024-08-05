@@ -2,7 +2,7 @@
 import "@/styles/home/homeRecentAnalytics.scss";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { fadeInUp } from "@/app/utils/animations";
+import { fadeInUp } from "@/utils/animations";
 import Link from "next/link";
 import ButtonArrow from "@/icons/ButtonArrow";
 
@@ -21,7 +21,7 @@ const HomeRecentAnalytics = () => {
               Recent Analytics from the Next Wave Ad Team
             </motion.h2>
             <Link href="#" className="bordered-button">
-              <span>Explore all solutions</span>
+              <span>More insights</span>
               <ButtonArrow />
             </Link>
           </div>

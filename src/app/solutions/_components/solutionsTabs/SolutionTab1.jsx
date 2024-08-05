@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/utils/animations";
 import Link from "next/link";
-import OrderButton from "@/components/OrderButton";
 
 const SolutionTab1 = () => {
   return (
@@ -29,11 +28,9 @@ const SolutionTab1 = () => {
           </li>
         </ul>
       </div>
-      <OrderButton
-        className={"orange-button"}
-        text={"Order solution"}
-        service={"High Advertising Costs with Low Returns"}
-      />
+      <Link href="#" className="orange-button">
+        Order solution
+      </Link>
     </div>
   );
 };

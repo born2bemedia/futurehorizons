@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import "@/styles/home/homeHowWeHack.scss";
-import { fadeInUp } from "@/app/utils/animations";
+import { fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import ButtonArrow from "@/icons/ButtonArrow";

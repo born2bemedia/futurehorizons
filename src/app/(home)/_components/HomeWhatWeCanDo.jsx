@@ -2,9 +2,10 @@
 import "@/styles/home/homeWhatWeCanDo.scss";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { fadeInUp } from "@/app/utils/animations";
+import { fadeInUp } from "@/utils/animations";
 import Link from "next/link";
 import Percent from "./Percent";
+import RequestButton from "@/components/RequestButton";
 
 const HomeWhatWeCanDo = () => {
   return (
@@ -90,9 +91,10 @@ const HomeWhatWeCanDo = () => {
             className="banner"
           >
             <p>Want the same results? Contact us!</p>
-            <Link href="#" className="orange-button">
-              Book consultation
-            </Link>
+            <RequestButton
+              className={"orange-button"}
+              text={"Book consultation"}
+            />
           </motion.div>
         </div>
       </div>
