@@ -19,6 +19,9 @@ header {
     nav {
       display: flex;
       gap: rem(30);
+      @media (max-width: rem(1370)) {
+        gap: rem(15);
+      }
       @media (max-width: rem(992)) {
         display: none;
       }
@@ -30,6 +33,9 @@ header {
         text-align: left;
         &:hover {
           color: #eb6418;
+        }
+        @media (max-width: rem(1030))  {
+          font-size: rem(12);
         }
       }
     }
@@ -85,7 +91,7 @@ header {
   pointer-events: none;
   backdrop-filter: blur(rem(10));
   @media (max-width: rem(992)) {
-    padding-top: rem(200);
+    padding-top: rem(120);
   }
   &.opened {
     left: 0;
