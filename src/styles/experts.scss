@@ -1,0 +1,140 @@
+@import "mixin";
+
+.site {
+  > .react-parallax {
+    border-radius: 0 0 rem(24) rem(24);
+  }
+}
+
+.experts-hero {
+  padding: rem(270) 0;
+  background-position: left center;
+  background-size: cover;
+  border-radius: 0 0 rem(24) rem(24);
+  @media (max-width: rem(992)) {
+    padding: rem(190) 0 rem(100) 0;
+    //background-image: url(/images/home/homeHero.webp);
+    background-position: bottom center;
+  }
+  img {
+    max-width: unset;
+  }
+  h2 {
+    font-size: rem(32);
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 0 rem(10) 0;
+    color: #eb6418;
+    @media (max-width: rem(992)) {
+      font-size: rem(24);
+    }
+  }
+  h1 {
+    color: #ffffff;
+    font-size: rem(64);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 0 rem(8) 0;
+    @media (max-width: rem(992)) {
+      font-size: rem(48);
+      br {
+        display: none;
+      }
+    }
+  }
+  p {
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0;
+    color: #ffffff;
+  }
+}
+
+.experts-wrap {
+  margin: rem(120) 0;
+  @media (max-width: rem(992)) {
+    margin: rem(100) 0;
+  }
+  &__body {
+    .row {
+      display: flex;
+      margin-bottom: rem(30);
+      padding-bottom: rem(30);
+      border-bottom: rem(1) solid #89a6a34d;
+      gap: rem(30);
+      @media (max-width: rem(992)) {
+        flex-direction: column;
+      }
+
+      > button {
+        display: none;
+        @media (max-width: rem(992)) {
+          display: flex;
+        }
+      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(16);
+        &:first-child {
+          justify-content: space-between;
+          width: 25%;
+          @media (max-width: rem(992)) {
+            width: 100%;
+            button {
+              display: none;
+            }
+          }
+        }
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+          background: #f5f5f5;
+          border-radius: rem(24);
+          padding: rem(40);
+          width: 37.5%;
+          @media (max-width: rem(992)) {
+            padding: rem(24);
+            width: 100%;
+          }
+        }
+        h2 {
+          color: #222222;
+          font-size: rem(36);
+          font-weight: 600;
+          line-height: 1.2;
+          text-align: left;
+          margin: 0;
+          @media (max-width: rem(992)) {
+            font-size: rem(32);
+            br {
+              display: none;
+            }
+          }
+        }
+        h3 {
+          color: #222222;
+          font-size: rem(24);
+          font-weight: 600;
+          line-height: 1.2;
+          text-align: left;
+          margin: 0;
+        }
+      }
+
+      &.four-col {
+        > div {
+          width: 25%;
+          @media (max-width: rem(992)) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

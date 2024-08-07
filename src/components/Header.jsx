@@ -30,7 +30,7 @@ const Header = () => {
             <nav>
               <Link href="/solutions">Solutions</Link>
               <Link href="/all-services">All services</Link>
-              <Link href="#">Experts</Link>
+              <Link href="/experts">Experts</Link>
               <Link href="#">Get a proposal</Link>
               <Link href="/how-we-work">How we work</Link>
               <Link href="#">Marketing thinking</Link>
@@ -58,7 +58,7 @@ const Header = () => {
           <nav>
             <Link href="/solutions">Solutions</Link>
             <Link href="/all-services">All services</Link>
-            <Link href="#">Experts</Link>
+            <Link href="/experts">Experts</Link>
             <Link href="#">Get a proposal</Link>
             <Link href="/how-we-work">How we work</Link>
             <Link href="#">Marketing thinking</Link>

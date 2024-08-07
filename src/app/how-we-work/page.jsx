@@ -4,7 +4,7 @@ import HowWeWorkHero from "./_components/HowWeWorkHero";
 import HowContactUs from "./_components/HowContactUs";
 import HowWeWorkDetails from "./_components/HowWeWorkDetails";
 
-const page = () => {
+const HowWeWork = () => {
   return (
     <>
       <HowWeWorkHero />
@@ -14,4 +14,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default HowWeWork;
