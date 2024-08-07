@@ -32,7 +32,7 @@ const Header = () => {
               <Link href="/all-services">All services</Link>
               <Link href="#">Experts</Link>
               <Link href="#">Get a proposal</Link>
-              <Link href="#">How we work</Link>
+              <Link href="/how-we-work">How we work</Link>
               <Link href="#">Marketing thinking</Link>
               <Link href="#">Contact us</Link>
             </nav>
@@ -60,7 +60,7 @@ const Header = () => {
             <Link href="/all-services">All services</Link>
             <Link href="#">Experts</Link>
             <Link href="#">Get a proposal</Link>
-            <Link href="#">How we work</Link>
+            <Link href="/how-we-work">How we work</Link>
             <Link href="#">Marketing thinking</Link>
             <Link href="#">Contact us</Link>
           </nav>

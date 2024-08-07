@@ -69,7 +69,7 @@ const Footer = () => {
                   <Link href="#">Experts</Link>
                 </li>
                 <li>
-                  <Link href="#">How we work</Link>
+                  <Link href="/how-we-work">How we work</Link>
                 </li>
                 <li>
                   <Link href="#">Marketing thinking</Link>
