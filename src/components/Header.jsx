@@ -31,17 +31,11 @@ const Header = () => {
               <Link href="/solutions">Solutions</Link>
               <Link href="/all-services">All services</Link>
               <Link href="/experts">Experts</Link>
-              <Link href="#">Get a proposal</Link>
+              <Link href="/get-a-proposal">Get a proposal</Link>
               <Link href="/how-we-work">How we work</Link>
               <Link href="#">Marketing thinking</Link>
               <Link href="#">Contact us</Link>
             </nav>
-
-            <div className="account">
-              <Link href="#">Sign In</Link>
-              <span className="divider">|</span>
-              <Link href="#">Sign up</Link>
-            </div>
 
             <span onClick={() => menuOpen()} className="menu-btn">
               {!menuOpened ? (
@@ -59,16 +53,11 @@ const Header = () => {
             <Link href="/solutions">Solutions</Link>
             <Link href="/all-services">All services</Link>
             <Link href="/experts">Experts</Link>
-            <Link href="#">Get a proposal</Link>
+            <Link href="/get-a-proposal">Get a proposal</Link>
             <Link href="/how-we-work">How we work</Link>
             <Link href="#">Marketing thinking</Link>
             <Link href="#">Contact us</Link>
           </nav>
-          <div className="account">
-            <Link href="#">Sign In</Link>
-            <span className="divider">|</span>
-            <Link href="#">Sign up</Link>
-          </div>
         </div>
       </div>
     </>
