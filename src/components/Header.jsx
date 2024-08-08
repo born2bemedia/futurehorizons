@@ -34,7 +34,7 @@ const Header = () => {
               <Link href="/get-a-proposal">Get a proposal</Link>
               <Link href="/how-we-work">How we work</Link>
               <Link href="#">Marketing thinking</Link>
-              <Link href="#">Contact us</Link>
+              <Link href="/contact-us">Contact us</Link>
             </nav>
 
             <span onClick={() => menuOpen()} className="menu-btn">

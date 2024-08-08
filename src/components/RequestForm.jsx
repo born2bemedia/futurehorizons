@@ -1,49 +1,53 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import CheckboxIcon from "@/icons/CheckboxIcon";
 import { usePopup } from "@/context/PopupsContext";
-import ThanksPopup from "./ThanksPopup";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import useCountryCode from "@/utils/useCountryCode";
 
 const RequestForm = () => {
-  const { thanksPopupDisplay, setThanksPopupDisplay } = usePopup();
   const countryCode = useCountryCode();
 
   const validationSchema = Yup.object({
-    name: Yup.string().required("Please enter your full name"),
+    firstName: Yup.string().required("The field is required."),
+    lastName: Yup.string().required("The field is required."),
     email: Yup.string()
       .email("Please enter a valid email address.")
-      .required("Please provide your email address."),
-    phone: Yup.string().required("Please enter a valid phone number."),
-    company: Yup.string().required(
-      "Please provide your company name and website."
-    ),
-    message: Yup.string().required("Please enter your message."),
-    policy: Yup.bool().oneOf([true], "You must accept privacy policy."),
+      .required("The field is required."),
+    phone: Yup.string().required("The field is required."),
+    company: Yup.string().required("The field is required."),
+    website: Yup.string().required("The field is required."),
+    message: Yup.string().required("The field is required."),
+    your_challenge: Yup.string().required("The field is required."),
   });
 
   const initialValues = {
-    name: "",
+    firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    company: "",
-    message: "",
-    policy: false,
+    website: "",
+    your_challenge: "",
+  };
+
+  const closePopup = (resetForm) => {
+    setRequestPopupDisplay(false);
+    if (resetForm) {
+      resetForm();
+    }
   };
 
   const handleSubmit = async (
     values,
-    { setSubmitting, resetForm, setStatus, status }
+    { setSubmitting, resetForm, setStatus }
   ) => {
     setSubmitting(false);
-    resetForm();
     setStatus({ success: true });
-    /*try {
-      const response = await fetch("/api/emails/contact", {
+    console.log("submit");
+    /*
+    try {
+      const response = await fetch("/api/emails/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,7 +58,6 @@ const RequestForm = () => {
       if (response.ok) {
         setTimeout(() => {
           console.log(JSON.stringify(values, null, 2));
-          setThanksPopupDisplay(true);
           setSubmitting(false);
           resetForm();
           setStatus({ success: true });
@@ -64,7 +67,10 @@ const RequestForm = () => {
       }
     } catch (error) {
       console.error(error);
-    }*/
+      setStatus({ success: false });
+      setSubmitting(false);
+    }
+    */
   };
 
   return (
@@ -75,111 +81,133 @@ const RequestForm = () => {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          {({ isSubmitting, status, touched, errors }) => (
-            <>
-              <Form>
-                <div>
-                  <Field
-                    name="name"
-                    type="text"
-                    placeholder="Full Name"
-                    className={touched.name && errors.name ? "invalid" : ""}
-                  />
-                  <ErrorMessage name="name" component="div" className="error" />
-                </div>
-
-                <div>
-                  <Field
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                    className={touched.email && errors.email ? "invalid" : ""}
-                  />
-                  <ErrorMessage
-                    name="email"
-                    component="div"
-                    className="error"
-                  />
-                </div>
-
-                <div>
-                  <PhoneInput
-                    country={countryCode}
-                    value=""
-                    onChange={(value) => setFieldValue("phone", value)}
-                    placeholder="Your phone"
-                    className={touched.phone && errors.phone ? "invalid" : ""}
-                  />
-                  <ErrorMessage name="phone" component="span" />
-                </div>
-
-                <div>
-                  <Field
-                    name="company"
-                    type="text"
-                    placeholder="Company and website"
-                    className={
-                      touched.company && errors.company ? "invalid" : ""
-                    }
-                  />
-                  <ErrorMessage
-                    name="company"
-                    component="div"
-                    className="error"
-                  />
-                </div>
-
-                <div className="full">
-                  <Field
-                    name="message"
-                    as="textarea"
-                    placeholder="Message"
-                    className={
-                      touched.message && errors.message ? "invalid" : ""
-                    }
-                  />
-                  <ErrorMessage
-                    name="message"
-                    component="div"
-                    className="error"
-                  />
-                </div>
-
-                <div className="checkbox">
-                  <Field
-                    type="checkbox"
-                    name="policy"
-                    className={touched.policy && errors.policy ? "invalid" : ""}
-                    id="policy"
-                  />
-                  <label for="policy">
-                    <CheckboxIcon />
-                    <span>
-                      I consent to Tech Fresco storing my information to handle
-                      my inquiry, as the Privacy Policy outlines.
-                    </span>
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  className="red-button"
-                  disabled={isSubmitting}
-                >
-                  Submit
-                </button>
-              </Form>
-              {status && status.success && (
+          {({
+            isSubmitting,
+            status,
+            touched,
+            errors,
+            resetForm,
+            setFieldValue,
+          }) => (
+            <div>
+              {status && status.success ? (
                 <div className="success-message">
-                  <img src="/images/success.svg" alt="Success" />
+                  <h2>Thank you!</h2>
                   <span>
-                    <b>Thank you for your request!</b> We have received your
-                    information, and our managers will be in touch with you
-                    shortly.
+                    Your request has been successfully received. Our team will
+                    review your information and contact you shortly to discuss
+                    your marketing challenges and the solutions we can provide.
                   </span>
                 </div>
+              ) : (
+                <>
+                  <Form>
+                    <div>
+                      <Field
+                        name="firstName"
+                        type="text"
+                        placeholder="First name"
+                        className={
+                          touched.firstName && errors.firstName ? "invalid" : ""
+                        }
+                      />
+                      <ErrorMessage
+                        name="firstName"
+                        component="div"
+                        className="error"
+                      />
+                    </div>
+
+                    <div>
+                      <Field
+                        name="lastName"
+                        type="text"
+                        placeholder="Last name"
+                        className={
+                          touched.lastName && errors.lastName ? "invalid" : ""
+                        }
+                      />
+                      <ErrorMessage
+                        name="lastName"
+                        component="div"
+                        className="error"
+                      />
+                    </div>
+
+                    <div>
+                      <Field
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                        className={
+                          touched.email && errors.email ? "invalid" : ""
+                        }
+                      />
+                      <ErrorMessage
+                        name="email"
+                        component="div"
+                        className="error"
+                      />
+                    </div>
+
+                    <div>
+                      <PhoneInput
+                        country={countryCode}
+                        value=""
+                        onChange={(value) => setFieldValue("phone", value)}
+                        placeholder="Your phone"
+                        className={
+                          touched.phone && errors.phone ? "invalid" : ""
+                        }
+                      />
+                      <ErrorMessage name="phone" component="span" />
+                    </div>
+
+                    <div>
+                      <Field
+                        name="website"
+                        type="text"
+                        placeholder="Company website"
+                        className={
+                          touched.website && errors.website ? "invalid" : ""
+                        }
+                      />
+                      <ErrorMessage
+                        name="website"
+                        component="div"
+                        className="error"
+                      />
+                    </div>
+
+                    <div>
+                      <Field
+                        name="your_challenge"
+                        type="text"
+                        placeholder="Your challenge"
+                        className={
+                          touched.your_challenge && errors.your_challenge
+                            ? "invalid"
+                            : ""
+                        }
+                      />
+                      <ErrorMessage
+                        name="your_challenge"
+                        component="div"
+                        className="error"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="orange-button"
+                      disabled={isSubmitting}
+                    >
+                      Submit
+                    </button>
+                  </Form>
+                </>
               )}
-            </>
+            </div>
           )}
         </Formik>
       </div>

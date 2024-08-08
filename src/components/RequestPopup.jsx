@@ -16,7 +16,8 @@ import PhoneInput from "react-phone-input-2";
 import useCountryCode from "@/utils/useCountryCode";
 
 function RequestPopup() {
-  const { requestPopupDisplay, setRequestPopupDisplay, serviceValue } = usePopup();
+  const { requestPopupDisplay, setRequestPopupDisplay, serviceValue } =
+    usePopup();
   const countryCode = useCountryCode();
 
   const validationSchema = Yup.object({
@@ -29,7 +30,7 @@ function RequestPopup() {
     company: Yup.string().required("The field is required."),
     website: Yup.string().required("The field is required."),
     message: Yup.string().required("The field is required."),
-    budget: Yup.string().required("The field is required."),
+    your_challenge: Yup.string().required("The field is required."),
   });
 
   const initialValues = {
@@ -37,10 +38,8 @@ function RequestPopup() {
     lastName: "",
     email: "",
     phone: "",
-    company: "",
     website: "",
-    message: "",
-    budget: "",
+    your_challenge: "",
   };
 
   const closePopup = (resetForm) => {
@@ -86,7 +85,9 @@ function RequestPopup() {
   };
 
   return (
-    <div className={`request-popup-wrap ${requestPopupDisplay ? "opened" : ""}`}>
+    <div
+      className={`request-popup-wrap ${requestPopupDisplay ? "opened" : ""}`}
+    >
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -197,22 +198,6 @@ function RequestPopup() {
 
                         <div>
                           <Field
-                            name="company"
-                            type="text"
-                            placeholder="Company name"
-                            className={
-                              touched.company && errors.company ? "invalid" : ""
-                            }
-                          />
-                          <ErrorMessage
-                            name="company"
-                            component="div"
-                            className="error"
-                          />
-                        </div>
-
-                        <div>
-                          <Field
                             name="website"
                             type="text"
                             placeholder="Company website"
@@ -229,31 +214,17 @@ function RequestPopup() {
 
                         <div>
                           <Field
-                            name="budget"
+                            name="your_challenge"
                             type="text"
-                            placeholder="Budget"
+                            placeholder="Your challenge"
                             className={
-                              touched.budget && errors.budget ? "invalid" : ""
+                              touched.your_challenge && errors.your_challenge
+                                ? "invalid"
+                                : ""
                             }
                           />
                           <ErrorMessage
-                            name="budget"
-                            component="div"
-                            className="error"
-                          />
-                        </div>
-
-                        <div>
-                          <Field
-                            name="message"
-                            type="text"
-                            placeholder="Message"
-                            className={
-                              touched.message && errors.message ? "invalid" : ""
-                            }
-                          />
-                          <ErrorMessage
-                            name="message"
+                            name="your_challenge"
                             component="div"
                             className="error"
                           />

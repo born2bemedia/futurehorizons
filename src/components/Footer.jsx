@@ -61,7 +61,7 @@ const Footer = () => {
                   <Link href="/get-a-proposal">Get a proposal</Link>
                 </li>
                 <li>
-                  <Link href="#">Contact us</Link>
+                  <Link href="/contact-us">Contact us</Link>
                 </li>
               </ul>
               <ul>
