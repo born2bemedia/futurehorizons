@@ -72,14 +72,7 @@ const Footer = () => {
                   <Link href="/how-we-work">How we work</Link>
                 </li>
                 <li>
-                  <Link href="#">Marketing thinking</Link>
-                </li>
-                <li>
-                  <span className="account">
-                    <Link href="#">Sign In</Link>
-                    <span className="divider">|</span>
-                    <Link href="#">Sign up</Link>
-                  </span>
+                  <Link href="/marketing-thinking">Marketing thinking</Link>
                 </li>
               </ul>
               <ul>

@@ -134,7 +134,7 @@ const HomeHowWeHack = () => {
             variants={fadeInUp}
             className="button-wrap"
           >
-            <Link href="#" className="orange-button">
+            <Link href="/get-a-proposal" className="orange-button">
               <span>Get started</span>
               <ButtonArrow />
             </Link>

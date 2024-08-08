@@ -39,7 +39,7 @@ const HomeHero = () => {
               <Link href="/all-services" className="bordered-button">
                 Explore services
               </Link>
-              <Link href="#" className="orange-button">
+              <Link href="/get-a-proposal" className="orange-button">
                 Get a proposal
               </Link>
             </motion.div>

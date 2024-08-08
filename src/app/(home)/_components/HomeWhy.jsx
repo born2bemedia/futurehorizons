@@ -39,7 +39,7 @@ const HomeWhy = () => {
               variants={fadeInUp}
               className="button-wrap"
             >
-              <Link href="#" className="orange-button">
+              <Link href="/experts" className="orange-button">
                 Meet our experts
               </Link>
             </motion.div>

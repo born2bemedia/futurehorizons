@@ -20,7 +20,7 @@ const HomeRecentAnalytics = () => {
             >
               Recent Analytics from the Next Wave Ad Team
             </motion.h2>
-            <Link href="#" className="bordered-button">
+            <Link href="/marketing-thinking" className="bordered-button">
               <span>More insights</span>
               <ButtonArrow />
             </Link>
@@ -35,15 +35,13 @@ const HomeRecentAnalytics = () => {
             >
               <div className="article-top">
                 <Link
-                  href="#"
+                  href="/marketing-thinking/avoiding-pitfalls-in-advertising-analytics-advanced-insights-and-best-practices"
                   className="thumb"
-                  style={{ backgroundImage: "url(/images/home/thumb.png)" }}
+                  style={{ backgroundImage: "url(/images/blog/article2.webp)" }}
                 ></Link>
-                <h3>Heading</h3>
-                <h2>Article 1</h2>
-                <p>Preview</p>
+                <h2>Avoiding Pitfalls in Advertising Analytics: Advanced Insights</h2>
               </div>
-              <Link href="#" className="orange-button">
+              <Link href="/marketing-thinking/avoiding-pitfalls-in-advertising-analytics-advanced-insights-and-best-practices" className="orange-button">
                 Read
               </Link>
             </motion.div>
@@ -55,15 +53,13 @@ const HomeRecentAnalytics = () => {
             >
               <div className="article-top">
                 <Link
-                  href="#"
+                  href="/marketing-thinking/advanced-tools-for-comprehensive-target-audience-analysis"
                   className="thumb"
-                  style={{ backgroundImage: "url(/images/home/thumb.png)" }}
+                  style={{ backgroundImage: "url(/images/blog/article3.webp)" }}
                 ></Link>
-                <h3>Heading</h3>
-                <h2>Article 1</h2>
-                <p>Preview</p>
+                <h2>Advanced Tools for Comprehensive Target Audience Analysis</h2>
               </div>
-              <Link href="#" className="orange-button">
+              <Link href="/marketing-thinking/advanced-tools-for-comprehensive-target-audience-analysis" className="orange-button">
                 Read
               </Link>
             </motion.div>
