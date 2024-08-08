@@ -23,7 +23,7 @@ export const metadata = {
     },
     description:
       "Discover top-tier B2B marketing services to boost your brand's visibility, drive qualified leads, and optimise your digital marketing strategy. Partner with Next Wave Ad for data-driven results.",
-    //images: "https://nextwavead.com/images/meta.png",
+    images: "https://nextwavead.com/images/meta.png",
   },
 };
 
