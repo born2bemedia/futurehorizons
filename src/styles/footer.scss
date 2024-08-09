@@ -4,6 +4,8 @@ footer {
   background: #171717;
   border-radius: rem(24) rem(24) 0 0;
   padding-top: rem(80);
+  position: relative;
+  z-index: 2;
   @media (max-width: rem(992)) {
     padding-top: rem(40);
   }
