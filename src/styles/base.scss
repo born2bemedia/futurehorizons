@@ -96,6 +96,11 @@ a {
 .site {
   position: relative;
   //overflow: hidden;
+  >.react-parallax {
+    @media (max-width: rem(992)) {
+      border-radius: 0!important;
+    }
+  }
 }
 
 /* Tabs */
@@ -152,7 +157,8 @@ a {
   }
 }
 
-.react-parallax {
+.react-parallax{
+  
   img {
     max-width: unset;
   }
