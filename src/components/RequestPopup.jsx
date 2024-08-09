@@ -27,9 +27,7 @@ function RequestPopup() {
       .email("Please enter a valid email address.")
       .required("The field is required."),
     phone: Yup.string().required("The field is required."),
-    company: Yup.string().required("The field is required."),
     website: Yup.string().required("The field is required."),
-    message: Yup.string().required("The field is required."),
     your_challenge: Yup.string().required("The field is required."),
   });
 
@@ -53,12 +51,9 @@ function RequestPopup() {
     values,
     { setSubmitting, resetForm, setStatus }
   ) => {
-    setSubmitting(false);
-    setStatus({ success: true });
-    console.log("submit");
-    /*
+    
     try {
-      const response = await fetch("/api/emails/order", {
+      const response = await fetch("/api/emails/request", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +76,7 @@ function RequestPopup() {
       setStatus({ success: false });
       setSubmitting(false);
     }
-    */
+    
   };
 
   return (

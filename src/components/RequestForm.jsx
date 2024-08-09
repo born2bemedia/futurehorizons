@@ -32,11 +32,8 @@ const RequestForm = () => {
     values,
     { setSubmitting, resetForm, setStatus }
   ) => {
-    setStatus({ success: true });
-    console.log("submit1");
-    /*
     try {
-      const response = await fetch("/api/emails/order", {
+      const response = await fetch("/api/emails/request", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +56,7 @@ const RequestForm = () => {
       setStatus({ success: false });
       setSubmitting(false);
     }
-    */
+    
   };
 
   return (

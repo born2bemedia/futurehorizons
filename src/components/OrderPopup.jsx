@@ -55,10 +55,6 @@ function OrderPopup() {
     values,
     { setSubmitting, resetForm, setStatus }
   ) => {
-    setSubmitting(false);
-    setStatus({ success: true });
-    console.log("submit");
-    /*
     const valuesWithService = {
       ...values,
       service: serviceValue,
@@ -89,7 +85,6 @@ function OrderPopup() {
       setStatus({ success: false });
       setSubmitting(false);
     }
-    */
   };
 
   return (
