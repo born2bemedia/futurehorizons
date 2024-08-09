@@ -38,7 +38,7 @@ function OrderPopup() {
     website: "",
     message: "",
     budget: "",
-    service: serviceValue,
+    service: `${serviceValue} Request`,
   };
 
   const closePopup = (resetForm) => {
@@ -54,7 +54,7 @@ function OrderPopup() {
   ) => {
     const valuesWithService = {
       ...values,
-      service: serviceValue,
+      service: `${serviceValue} Request`,
     };
 
     console.log("Form values being submitted: ", valuesWithService);
