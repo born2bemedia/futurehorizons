@@ -1,0 +1,107 @@
+@import "mixin";
+
+.policy-head {
+  height: rem(98);
+  background-image: url(/images/policy-head.webp);
+  background-position: center;
+  background-size: cover;
+  border-radius: 0 0 rem(24) rem(24);
+  @media (max-width: rem(992)) {
+    height: rem(90);
+  }
+}
+
+.policy-wrap {
+  margin: rem(80) 0;
+  @media (max-width: rem(992)) {
+    margin: rem(70) 0;
+  }
+  h1 {
+    color: #222222;
+    font-size: rem(48);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0;
+    strong {
+      font-weight: 600;
+    }
+    @media (max-width: rem(992)) {
+      font-size: rem(32);
+    }
+  }
+  .date {
+    margin: rem(40) 0;
+    color: #eb6418;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: left;
+  }
+  article {
+    margin-top: rem(40);
+    a {
+      color: #eb6418;
+      strong {
+        font-weight: 400;
+      }
+    }
+    strong {
+      font-weight: 600;
+    }
+    p {
+      color: #222222;
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.2;
+      text-align: left;
+      margin: 0 0 rem(24) 0;
+    }
+    h2 {
+      color: #222222;
+      font-size: rem(20);
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: left;
+      margin: rem(32) 0 rem(24) 0;
+      strong {
+        font-weight: 600;
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+      @media (max-width: rem(992)) {
+        font-size: rem(20);
+      }
+    }
+    h3 {
+      color: #222222;
+      font-size: rem(16);
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: left;
+      margin: rem(24) 0 rem(24) 0;
+      strong {
+        font-weight: 600;
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+      @media (max-width: rem(992)) {
+        font-size: rem(16);
+      }
+    }
+    ul,
+    ol {
+      margin: 0 0 rem(24) 0;
+      padding: 0 0 0 rem(16);
+      li {
+        color: #222222;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: left;
+      }
+    }
+  }
+}

@@ -38,10 +38,10 @@ export async function getPage(slug, locale) {
   const text = await readFile(`./src/lib/policies/${fileSlug}.md`, "utf8");
   const {
     content,
-    data: { title },
+    data: { title, date },
   } = matter(text);
   const body = marked(content);
-  return { slug: fileSlug, title, body };
+  return { slug: fileSlug, title, date, body };
 }
 
 export async function getPageSlugs() {
