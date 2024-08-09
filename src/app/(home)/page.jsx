@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HomeHero from "./_components/HomeHero";
 import HomeSolutions from "./_components/HomeSolutions";
 import HomeWhy from "./_components/HomeWhy";

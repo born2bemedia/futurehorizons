@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
 const Percent = ({ percentageMax, prefix = "" }) => {
@@ -25,7 +25,8 @@ const Percent = ({ percentageMax, prefix = "" }) => {
       offset={{ top: 10, bottom: 10 }}
     >
       <div className="percent">
-        {prefix}{percentage}%
+        {prefix}
+        {percentage}%
       </div>
     </VisibilitySensor>
   );

@@ -26,18 +26,30 @@
     }
 
     .sliderContainer {
+      margin-top: 4rem;
+
       &:last-child {
-        margin-top: rem(64);
-        @media (max-width: rem(992)) {
-          margin-top: rem(32);
+        margin-top: 2rem;
+
+        @media (max-width: 62rem) {
+          margin-top: 1.5rem;
         }
       }
-      .slick-slide {
-        padding: 0 rem(32);
+
+      .swiper-slide {
+        padding: 0 2rem;
+
         img {
-          height: rem(60);
+          height: rem(60); // 60px converted to rem
           display: block;
+          @media (max-width: rem(992)) {
+            height: auto;
+          }
         }
+      }
+
+      &.rtl {
+        direction: rtl;
       }
     }
   }

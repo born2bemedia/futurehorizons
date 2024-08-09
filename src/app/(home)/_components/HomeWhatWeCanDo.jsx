@@ -1,9 +1,8 @@
 "use client";
 import "@/styles/home/homeWhatWeCanDo.scss";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/utils/animations";
-import Link from "next/link";
 import Percent from "./Percent";
 import RequestButton from "@/components/RequestButton";
 

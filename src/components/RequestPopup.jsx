@@ -5,12 +5,9 @@ import {
   Form,
   Field,
   ErrorMessage,
-  useField,
-  useFormikContext,
 } from "formik";
 import * as Yup from "yup";
 import { usePopup } from "@/context/PopupsContext";
-import Select, { components } from "react-select";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import useCountryCode from "@/utils/useCountryCode";

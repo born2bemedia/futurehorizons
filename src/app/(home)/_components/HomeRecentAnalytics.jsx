@@ -1,6 +1,6 @@
 "use client";
 import "@/styles/home/homeRecentAnalytics.scss";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/utils/animations";
 import Link from "next/link";
@@ -39,9 +39,14 @@ const HomeRecentAnalytics = () => {
                   className="thumb"
                   style={{ backgroundImage: "url(/images/blog/article2.webp)" }}
                 ></Link>
-                <h2>Avoiding Pitfalls in Advertising Analytics: Advanced Insights</h2>
+                <h2>
+                  Avoiding Pitfalls in Advertising Analytics: Advanced Insights
+                </h2>
               </div>
-              <Link href="/marketing-thinking/avoiding-pitfalls-in-advertising-analytics-advanced-insights-and-best-practices" className="orange-button">
+              <Link
+                href="/marketing-thinking/avoiding-pitfalls-in-advertising-analytics-advanced-insights-and-best-practices"
+                className="orange-button"
+              >
                 Read
               </Link>
             </motion.div>
@@ -57,9 +62,14 @@ const HomeRecentAnalytics = () => {
                   className="thumb"
                   style={{ backgroundImage: "url(/images/blog/article3.webp)" }}
                 ></Link>
-                <h2>Advanced Tools for Comprehensive Target Audience Analysis</h2>
+                <h2>
+                  Advanced Tools for Comprehensive Target Audience Analysis
+                </h2>
               </div>
-              <Link href="/marketing-thinking/advanced-tools-for-comprehensive-target-audience-analysis" className="orange-button">
+              <Link
+                href="/marketing-thinking/advanced-tools-for-comprehensive-target-audience-analysis"
+                className="orange-button"
+              >
                 Read
               </Link>
             </motion.div>

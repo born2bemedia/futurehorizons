@@ -5,10 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Facebook from "@/icons/social/Facebook";
 import Instagram from "@/icons/social/Instagram";
-import TikTok from "@/icons/social/TikTok";
 import X from "@/icons/social/X";
-import YouTube from "@/icons/social/YouTube";
-import Linkedin from "@/icons/social/Linkedin";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);

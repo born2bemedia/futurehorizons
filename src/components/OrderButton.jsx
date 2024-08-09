@@ -4,9 +4,7 @@ import { usePopup } from "@/context/PopupsContext";
 
 function OrderButton({ className, text, service }) {
   const {
-    orderPopupDisplay,
     setOrderPopupDisplay,
-    serviceValue,
     setServiceValue,
   } = usePopup();
 

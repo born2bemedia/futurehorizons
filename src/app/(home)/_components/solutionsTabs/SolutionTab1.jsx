@@ -1,8 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { fadeInUp } from "@/utils/animations";
-import Link from "next/link";
+import React from "react";
 import OrderButton from "@/components/OrderButton";
 
 const SolutionTab1 = () => {
