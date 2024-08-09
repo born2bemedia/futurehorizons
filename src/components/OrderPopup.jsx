@@ -131,7 +131,7 @@ function OrderPopup() {
                         <Field
                           type="hidden"
                           name="service"
-                          value={serviceValue}
+                          value={`${serviceValue} Request`}
                         />
                         <div>
                           <Field

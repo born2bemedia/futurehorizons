@@ -24,7 +24,7 @@ const ExpertsWrap = () => {
               <OrderButton
                 className={"orange-button"}
                 text={"Contact strategic experts"}
-                service={"Strategic Experts Request"}
+                service={"Strategic Experts"}
               />
             </motion.div>
             <motion.div
@@ -60,7 +60,7 @@ const ExpertsWrap = () => {
             <OrderButton
               className={"orange-button"}
               text={"Contact strategic experts"}
-              service={"Strategic Experts Request"}
+              service={"Strategic Experts"}
             />
           </div>
           <div className="row">
@@ -78,7 +78,7 @@ const ExpertsWrap = () => {
               <OrderButton
                 className={"orange-button"}
                 text={"Contact analytic experts"}
-                service={"Analytic Experts Request"}
+                service={"Analytic Experts"}
               />
             </motion.div>
             <motion.div
@@ -113,7 +113,7 @@ const ExpertsWrap = () => {
             <OrderButton
               className={"orange-button"}
               text={"Contact analytic experts"}
-              service={"Analytic Experts Request"}
+              service={"Analytic Experts"}
             />
           </div>
           <div className="row">
@@ -130,7 +130,7 @@ const ExpertsWrap = () => {
               <OrderButton
                 className={"orange-button"}
                 text={"Contact creative experts"}
-                service={"Creative Experts Request"}
+                service={"Creative Experts"}
               />
             </motion.div>
             <motion.div
@@ -165,7 +165,7 @@ const ExpertsWrap = () => {
             <OrderButton
               className={"orange-button"}
               text={"Contact creative experts"}
-              service={"Creative Experts Request"}
+              service={"Creative Experts"}
             />
           </div>
           <div className="row four-col">
@@ -182,7 +182,7 @@ const ExpertsWrap = () => {
               <OrderButton
                 className={"orange-button"}
                 text={"Contact marketing experts"}
-                service={"Marketing Experts Request"}
+                service={"Marketing Experts"}
               />
             </motion.div>
             <motion.div
@@ -231,7 +231,7 @@ const ExpertsWrap = () => {
             <OrderButton
               className={"orange-button"}
               text={"Contact marketing experts"}
-              service={"Marketing Experts Request"}
+              service={"Marketing Experts"}
             />
           </div>
           <div className="row">
@@ -249,7 +249,7 @@ const ExpertsWrap = () => {
               <OrderButton
                 className={"orange-button"}
                 text={"Contact automation experts"}
-                service={"Automation Experts Request"}
+                service={"Automation Experts"}
               />
             </motion.div>
             <motion.div
@@ -284,7 +284,7 @@ const ExpertsWrap = () => {
             <OrderButton
               className={"orange-button"}
               text={"Contact automation experts"}
-              service={"Automation Experts Request"}
+              service={"Automation Experts"}
             />
           </div>
           <div className="row">
@@ -302,7 +302,7 @@ const ExpertsWrap = () => {
               <OrderButton
                 className={"orange-button"}
                 text={"Contact development experts"}
-                service={"Development Experts Request"}
+                service={"Development Experts"}
               />
             </motion.div>
             <motion.div
@@ -337,7 +337,7 @@ const ExpertsWrap = () => {
             <OrderButton
               className={"orange-button"}
               text={"Contact development experts"}
-              service={"Development Experts Request"}
+              service={"Development Experts"}
             />
           </div>
         </div>
