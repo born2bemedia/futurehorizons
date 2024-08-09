@@ -7,22 +7,27 @@ import Link from "next/link";
 import { Parallax } from "react-parallax";
 
 const HomeHero = () => {
-  const [bgImage, setBgImage] = useState("/images/home/homeHero.webp");
+  const [bgImage, setBgImage] = useState(
+    window.innerWidth <= 767
+      ? "/images/home/homeHero-mobile.webp"
+      : "/images/home/homeHero.webp"
+  );
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 767) {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const handleMediaChange = (e) => {
+      if (e.matches) {
         setBgImage("/images/home/homeHero-mobile.webp");
       } else {
         setBgImage("/images/home/homeHero.webp");
       }
     };
 
-    handleResize(); // Set the initial background image
-    window.addEventListener("resize", handleResize);
+    mediaQuery.addEventListener("change", handleMediaChange);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      mediaQuery.removeEventListener("change", handleMediaChange);
     };
   }, []);
 
