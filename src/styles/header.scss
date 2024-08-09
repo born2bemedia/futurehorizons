@@ -3,10 +3,14 @@
 header {
   padding: rem(24) 0;
   border-bottom: rem(1) solid #ffffff33;
-  height: rem(90);
-  margin-bottom: - rem(90);
+  height: rem(98);
+  margin-bottom: - rem(98);
   position: relative;
   z-index: 999;
+  @media (max-width: rem(992)) {
+    height: rem(90);
+    margin-bottom: - rem(90);
+  }
   .header-row {
     display: flex;
     align-items: center;
@@ -14,6 +18,48 @@ header {
 
     > a {
       display: flex;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: rem(16);
+      @media (max-width: rem(992)) {
+        display: none;
+      }
+      .contact-row {
+        display: flex;
+        align-items: center;
+        gap: rem(24);
+        a {
+          color: #C5C5C5;
+          font-size: rem(12);
+          font-weight: 400;
+          line-height: 1.2;
+          text-align: left;
+          &:hover {
+            color: #eb6418;
+          }
+          @media (max-width: rem(1030)) {
+            font-size: rem(12);
+          }
+        }
+        .soc{
+          display: flex;
+          align-items: center;
+          gap:rem(8);
+          a{
+            svg{
+              width: rem(16);
+              height: rem(16);
+              path{
+                fill:#C5C5C5;
+              }
+            }
+          }
+        }
+      }
     }
 
     nav {
@@ -34,7 +80,7 @@ header {
         &:hover {
           color: #eb6418;
         }
-        @media (max-width: rem(1030))  {
+        @media (max-width: rem(1030)) {
           font-size: rem(12);
         }
       }
@@ -111,6 +157,39 @@ header {
       text-align: left;
       &:hover {
         color: #eb6418;
+      }
+    }
+  }
+
+  .contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+    a {
+      color: #C5C5C5;
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.2;
+      text-align: left;
+      &:hover {
+        color: #eb6418;
+      }
+      @media (max-width: rem(1030)) {
+        font-size: rem(16);
+      }
+    }
+    .soc{
+      display: flex;
+      align-items: center;
+      gap:rem(8);
+      a{
+        svg{
+          width: rem(24);
+          height: rem(24);
+          path{
+            fill:#C5C5C5;
+          }
+        }
       }
     }
   }

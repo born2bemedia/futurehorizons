@@ -24,28 +24,31 @@ const Footer = () => {
                 <p></p>
               </div>
               <ul>
-                <li>Address:</li>
-                <li>Email:</li>
-                <li>Phone:</li>
+                <li>
+                  <b>Office address:</b> 46 Alabin street, 4th floor, 1000 Sofia
+                  Center, Sofia, Bulgaria
+                  <br />
+                  <b>Registered address:</b> Studentski District, 91B Metodi
+                  Andonov str., entr. A, ap. 14, Sofia 1797, Bulgaria
+                </li>
+                <li>
+                  <Link href="mailto:info@nextwavead.com">
+                    info@nextwavead.com
+                  </Link>
+                </li>
+                <li>
+                  <Link href="tel:+35924373071">+35924373071</Link>
+                </li>
               </ul>
               <div className="soc">
-                <Link href="#">
+                <Link href="#" target="_blank">
                   <Facebook />
                 </Link>
-                <Link href="#">
+                <Link href="#" target="_blank">
                   <Instagram />
                 </Link>
-                <Link href="#">
-                  <TikTok />
-                </Link>
-                <Link href="#">
+                <Link href="#" target="_blank">
                   <X />
-                </Link>
-                <Link href="#">
-                  <YouTube />
-                </Link>
-                <Link href="#">
-                  <Linkedin />
                 </Link>
               </div>
             </div>

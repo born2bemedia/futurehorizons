@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { usePopup } from "@/context/PopupsContext";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import useCountryCode from "@/utils/useCountryCode";
@@ -16,9 +15,7 @@ const RequestForm = () => {
       .email("Please enter a valid email address.")
       .required("The field is required."),
     phone: Yup.string().required("The field is required."),
-    company: Yup.string().required("The field is required."),
     website: Yup.string().required("The field is required."),
-    message: Yup.string().required("The field is required."),
     your_challenge: Yup.string().required("The field is required."),
   });
 
@@ -31,20 +28,12 @@ const RequestForm = () => {
     your_challenge: "",
   };
 
-  const closePopup = (resetForm) => {
-    setRequestPopupDisplay(false);
-    if (resetForm) {
-      resetForm();
-    }
-  };
-
   const handleSubmit = async (
     values,
     { setSubmitting, resetForm, setStatus }
   ) => {
-    setSubmitting(false);
     setStatus({ success: true });
-    console.log("submit");
+    console.log("submit1");
     /*
     try {
       const response = await fetch("/api/emails/order", {

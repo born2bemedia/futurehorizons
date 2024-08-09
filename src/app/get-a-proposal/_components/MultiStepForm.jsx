@@ -298,6 +298,15 @@ const StepThree = ({ prev, country, touched, errors, setFieldValue }) => (
       </div>
       <div>
         <Field
+          name="company"
+          type="text"
+          placeholder="Company name"
+          className={touched.company && errors.company ? "invalid" : ""}
+        />
+        <ErrorMessage className="error" name="company" component="div" />
+      </div>
+      <div>
+        <Field
           name="website"
           type="text"
           placeholder="Company website"
@@ -305,15 +314,7 @@ const StepThree = ({ prev, country, touched, errors, setFieldValue }) => (
         />
         <ErrorMessage className="error" name="website" component="div" />
       </div>
-      <div>
-        <Field
-          name="challenge"
-          type="text"
-          placeholder="Your challenge"
-          className={touched.challenge && errors.challenge ? "invalid" : ""}
-        />
-        <ErrorMessage className="error" name="challenge" component="div" />
-      </div>
+
       <button className="orange-button" type="submit">
         Submit
       </button>
@@ -333,7 +334,7 @@ const MultiStepForm = () => {
     email: "",
     phone: "",
     website: "",
-    challenge: "",
+    company: "",
   };
 
   const validationSchema = [
@@ -353,9 +354,7 @@ const MultiStepForm = () => {
       website: Yup.string()
         .url("Please provide a valid company website address.")
         .required("The field is required."),
-      challenge: Yup.string().required(
-        "Please describe your marketing challenge."
-      ),
+      company: Yup.string().required("The field is required."),
     }),
   ];
 
