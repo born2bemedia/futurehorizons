@@ -366,9 +366,36 @@ const MultiStepForm = () => {
     setStep(step - 1);
   };
 
-  const handleSubmit = (values) => {
-    console.log(values);
-    setStep(4);
+  const handleSubmit = async (
+    values,
+    { setSubmitting, resetForm, setStatus }
+  ) => {
+    try {
+      const response = await fetch("/api/emails/proposal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      console.log(JSON.stringify(values));
+      if (response.ok) {
+        setTimeout(() => {
+          console.log(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+          resetForm();
+          setStatus({ success: true });
+          setStep(4);
+        }, 400);
+      } else {
+        setStatus({ success: false });
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus({ success: false });
+      setSubmitting(false);
+    }
+    
   };
 
   return (
