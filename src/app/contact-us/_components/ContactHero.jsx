@@ -8,7 +8,7 @@ import RequestForm from "@/components/RequestForm";
 
 const ContactHero = () => {
   return (
-    <Parallax bgImage="/images/services/servicesHero.webp" strength={-50}>
+    <Parallax bgImage="/images/contacts/hero.webp" strength={-50}>
       <section className="contact-hero">
         <div className="_container">
           <div className="contact-hero__body">
