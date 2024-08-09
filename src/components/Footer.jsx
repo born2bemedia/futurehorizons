@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="left">
               <div className="logo">
                 <Link href="/">
-                  <img src="/images/foot-logo.svg" />
+                  <img src="/images/foot-logo.svg" alt="foot-logo" />
                 </Link>
                 <p></p>
               </div>

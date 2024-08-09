@@ -108,6 +108,7 @@ function OrderPopup() {
               <img
                 src="/images/closePopup.svg"
                 className="popup-close"
+                alt="popup-close"
                 onClick={() => closePopup(resetForm)}
               />
               <div>
