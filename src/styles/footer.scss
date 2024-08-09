@@ -51,6 +51,14 @@ footer {
         text-align: left;
         a {
           color: #fff;
+          &:hover {
+            color: #eb6418;
+            svg {
+              path {
+                fill: #eb6418;
+              }
+            }
+          }
         }
         .account {
           display: flex;
@@ -75,6 +83,13 @@ footer {
         margin-top: rem(24);
         a {
           display: flex;
+          &:hover {
+            svg {
+              path {
+                fill: #eb6418;
+              }
+            }
+          }
         }
       }
     }
