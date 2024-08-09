@@ -1,14 +1,33 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "@/styles/home/homeHero.scss";
 import { fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Parallax } from 'react-parallax';
+import { Parallax } from "react-parallax";
 
 const HomeHero = () => {
+  const [bgImage, setBgImage] = useState("/images/home/homeHero.webp");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 767) {
+        setBgImage("/images/home/homeHero-mobile.webp");
+      } else {
+        setBgImage("/images/home/homeHero.webp");
+      }
+    };
+
+    handleResize(); // Set the initial background image
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <Parallax bgImage="/images/home/homeHero.webp" strength={-50}>
+    <Parallax bgImage={bgImage} strength={-50}>
       <section className="home-hero">
         <div className="_container">
           <div className="home-hero__body">
