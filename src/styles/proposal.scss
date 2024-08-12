@@ -40,7 +40,7 @@
     text-align: center;
     margin: 0 0 rem(8) 0;
     @media (max-width: rem(992)) {
-      font-size: rem(48);
+      font-size: rem(40);
       br {
         display: none;
       }
@@ -205,6 +205,9 @@
               color: #eb6418;
               border-color: #eb6418;
               background-color: #eb64181a;
+            }
+            @media (max-width: rem(992)) {
+              font-size: rem(14);
             }
           }
         }

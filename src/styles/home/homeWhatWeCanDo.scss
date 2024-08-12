@@ -77,6 +77,14 @@
           font-size: rem(24);
           font-weight: 600;
           color: #ffffff;
+          br{
+            display: none;
+          }
+          @media (max-width: rem(992)) {
+            br{
+              display: block;
+            }
+          }
         }
       }
     }

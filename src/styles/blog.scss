@@ -12,7 +12,7 @@
   background-size: cover;
   border-radius: 0 0 rem(24) rem(24);
   @media (max-width: rem(992)) {
-    padding: rem(170) 0 rem(170) 0;
+    padding: rem(170) 0 rem(80) 0;
     //background-image: url(/images/home/homeHero.webp);
     background-position: bottom center;
   }
@@ -107,6 +107,9 @@
   margin-top: -90px;
   position: relative;
   z-index: 1;
+  @media (max-width: rem(992)) {
+    margin-top: -60px;
+  }
   article {
     padding: rem(64);
     background: #f5f5f5;

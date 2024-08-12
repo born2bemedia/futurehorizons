@@ -89,7 +89,7 @@ const HomeWhatWeCanDo = () => {
             variants={fadeInUp}
             className="banner"
           >
-            <p>Want the same results? Contact us!</p>
+            <p>Want the same results? <br/>Contact us!</p>
             <RequestButton
               className={"orange-button"}
               text={"Book consultation"}

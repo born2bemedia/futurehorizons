@@ -38,7 +38,7 @@
     text-align: center;
     margin: 0 0 rem(8) 0;
     @media (max-width: rem(992)) {
-      font-size: rem(48);
+      font-size: rem(40);
       br {
         display: none;
       }
@@ -91,6 +91,9 @@
       margin: 0 0 rem(64) 0;
       @media (max-width: rem(992)) {
         font-size: rem(32);
+        br{
+          display: none;
+        }
       }
     }
     p {
@@ -153,6 +156,8 @@
       @media (max-width: rem(992)) {
         overflow-x: auto;
         width: 100%;
+        padding-right: 0;
+        border: none;
       }
       > div {
         display: flex;
