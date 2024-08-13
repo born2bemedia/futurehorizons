@@ -6,6 +6,7 @@ import Preloader from "@/components/Preloader";
 import { PopupsProvider } from "@/context/PopupsContext";
 import OrderPopup from "@/components/OrderPopup";
 import RequestPopup from "@/components/RequestPopup";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={dmsans.className}>
+        <GoogleAnalytics gaId="G-DT5VS5W0E0" />
         <PopupsProvider>
           <Preloader />
           <Header />
