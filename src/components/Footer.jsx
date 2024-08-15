@@ -38,13 +38,13 @@ const Footer = () => {
                 </li>
               </ul>
               <div className="soc">
-                <Link href="#" target="_blank">
+                <Link href="https://www.facebook.com/nextwavead/" target="_blank">
                   <Facebook />
                 </Link>
-                <Link href="#" target="_blank">
+                <Link href="https://www.instagram.com/nextwavead/" target="_blank">
                   <Instagram />
                 </Link>
-                <Link href="#" target="_blank">
+                <Link href="https://x.com/nextwavead" target="_blank">
                   <X />
                 </Link>
               </div>

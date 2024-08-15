@@ -37,13 +37,13 @@ const Header = () => {
                 </Link>
                 <Link href="tel:+35924373071">+35924373071</Link>
                 <div className="soc">
-                  <Link href="#" target="_blank">
+                  <Link href="https://www.facebook.com/nextwavead/" target="_blank">
                     <Facebook />
                   </Link>
-                  <Link href="#" target="_blank">
+                  <Link href="https://www.instagram.com/nextwavead/" target="_blank">
                     <Instagram />
                   </Link>
-                  <Link href="#" target="_blank">
+                  <Link href="https://x.com/nextwavead" target="_blank">
                     <X />
                   </Link>
                 </div>
@@ -85,13 +85,13 @@ const Header = () => {
             <Link href="mailto:info@nextwavead.com">info@nextwavead.com</Link>
             <Link href="tel:+35924373071">+35924373071</Link>
             <div className="soc">
-              <Link href="#" target="_blank">
+              <Link href="https://www.facebook.com/nextwavead/" target="_blank">
                 <Facebook />
               </Link>
-              <Link href="#" target="_blank">
+              <Link href="https://www.instagram.com/nextwavead/" target="_blank">
                 <Instagram />
               </Link>
-              <Link href="#" target="_blank">
+              <Link href="https://x.com/nextwavead" target="_blank">
                 <X />
               </Link>
             </div>
