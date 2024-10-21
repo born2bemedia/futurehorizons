@@ -2,76 +2,51 @@
 
 import { useRouter, usePathname } from "@/navigation";
 import { useLocale } from "next-intl";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function LanguageChanger() {
   const locale = useLocale();
+  const router = useRouter();
   const pathname = usePathname();
-  const getLastSegment = (pathname) => {
-    const segments = pathname.split("/");
-    const lastSegment = segments.pop();
 
-    // If the last segment is empty (which means the URL ends with '/blog'), pop another segment
-    if (lastSegment === "" || lastSegment === "it" || lastSegment === "de") {
-      return segments.join("/").replace("/it", "").replace("/de", "") || "/";
-    }
-
-    // Join the remaining segments excluding the language segment '/it' or '/de'
-    return (
-      segments.join("/").replace("/it", "").replace("/de", "") +
-      "/" +
-      lastSegment
-    );
+  const handleChange = (lang) => {
+    router.push(pathname, { locale: lang });
   };
-
-  const lastSegment = getLastSegment(pathname);
-
-  console.log("pathname", pathname);
 
   return (
     <div className="lang-switcher">
-      <Link
-        locale="en"
-        href={`${lastSegment}`}
+      <button
+        onClick={() => handleChange("en")}
         className={locale === "en" ? "active" : ""}
       >
         EN
-      </Link>
-      <Link
-        locale="de"
-        href={`${lastSegment}`}
+      </button>
+      <button
+        onClick={() => handleChange("de")}
         className={locale === "de" ? "active" : ""}
       >
         DE
-      </Link>
-      <Link
-        locale="it"
-        href={`${lastSegment}`}
+      </button>
+      <button
+        onClick={() => handleChange("it")}
         className={locale === "it" ? "active" : ""}
       >
         IT
-      </Link>
-      {/*<Link
-        locale="bg"
-        href={`/bg${lastSegment}`}
-        className={selectedLocale === "bg" ? "active" : ""}
-      >
-        BG
-      </Link>*/}
+      </button>
 
       <style jsx>{`
         button {
           margin-right: 10px;
-          padding: 8px 16px;
+          padding: 0;
           border: none;
           cursor: pointer;
-          background-color: #f0f0f0;
-          border-radius: 4px;
+          background-color: transparent;
+          border-radius: 0;
+          color:#c5c5c5;
+          font-size:12px;
         }
         button.active {
-          background-color: #0070f3;
-          color: white;
+          color: #eb6418;
         }
       `}</style>
     </div>
