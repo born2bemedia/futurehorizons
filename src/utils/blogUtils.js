@@ -19,7 +19,7 @@ export async function getPost(slug, locale) {
   return { slug, title, seo_title, seo_description, thumbnail, body };
 }
 
-export async function getSlugs() {
+export async function getSlugs(locale) {
   let folder = "blog";
   if (locale === "it") {
     folder = "blog-it";
