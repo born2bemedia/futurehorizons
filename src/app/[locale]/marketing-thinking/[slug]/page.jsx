@@ -13,7 +13,7 @@ export async function generateStaticParams() {
     });
   });
 
-  return slugs;
+  return params;
 }
 
 export async function generateMetadata({ params: { slug, locale } }) {
