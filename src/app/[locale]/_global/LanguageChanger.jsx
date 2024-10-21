@@ -7,18 +7,17 @@ import { useState, useEffect } from "react";
 
 export default function LanguageChanger() {
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
-  const [selectedLocale, setSelectedLocale] = useState(locale);
-
   const getLastSegment = (pathname) => {
     const segments = pathname.split("/");
     const lastSegment = segments.pop();
 
+    // If the last segment is empty (which means the URL ends with '/blog'), pop another segment
     if (lastSegment === "" || lastSegment === "it" || lastSegment === "de") {
       return segments.join("/").replace("/it", "").replace("/de", "") || "/";
     }
 
+    // Join the remaining segments excluding the language segment '/it' or '/de'
     return (
       segments.join("/").replace("/it", "").replace("/de", "") +
       "/" +
@@ -28,32 +27,28 @@ export default function LanguageChanger() {
 
   const lastSegment = getLastSegment(pathname);
 
-  useEffect(() => {
-    setSelectedLocale(locale);
-  }, []);
-
   console.log("pathname", pathname);
 
   return (
     <div className="lang-switcher">
       <Link
         locale="en"
-        href={`/en${lastSegment}`}
-        className={selectedLocale === "en" ? "active" : ""}
+        href={`${lastSegment}`}
+        className={locale === "en" ? "active" : ""}
       >
         EN
       </Link>
       <Link
         locale="de"
-        href={`/de${lastSegment}`}
-        className={selectedLocale === "de" ? "active" : ""}
+        href={`${lastSegment}`}
+        className={locale === "de" ? "active" : ""}
       >
         DE
       </Link>
       <Link
         locale="it"
-        href={`/it${lastSegment}`}
-        className={selectedLocale === "it" ? "active" : ""}
+        href={`${lastSegment}`}
+        className={locale === "it" ? "active" : ""}
       >
         IT
       </Link>

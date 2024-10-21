@@ -3,7 +3,7 @@ import { getPost, getSlugs } from "@/utils/blogUtils";
 import React from "react";
 
 export async function generateStaticParams() {
-  const slugs = await getSlugs(locale);
+  const slugs = await getSlugs();
   const locales = ["en", "it", "de"];
 
   const params = [];

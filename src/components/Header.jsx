@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import Facebook from "@/icons/social/Facebook";
 import Instagram from "@/icons/social/Instagram";
 import X from "@/icons/social/X";
-import LanguageChanger from "./LanguageChanger";
+import LanguageChanger from "../app/[locale]/_global/LanguageChanger";
 import { useTranslations } from "next-intl";
 
 const Header = () => {
