@@ -2,6 +2,22 @@ import "@/styles/blog.scss";
 import { getPost, getSlugs } from "@/utils/blogUtils";
 import React from "react";
 
+// This is used for dynamic metadata generation
+export async function generateMetadata({ params: { slug, locale } }) {
+  const post = await getPost(slug, locale);
+
+  return {
+    title: post?.seo_title || 'Default Title',
+    description: post?.seo_description || 'Default Description',
+    openGraph: {
+      title: post?.seo_title || 'Default OG Title',
+      description: post?.seo_description || 'Default OG Description',
+      images: "https://nextwavead.com/images/meta.png",
+    },
+  };
+}
+
+// This is used for generating dynamic routes for SSG
 export async function generateStaticParams() {
   const locales = ["en", "it", "de"]; // List of locales
   const params = [];
@@ -17,25 +33,17 @@ export async function generateStaticParams() {
   return params; // Return the params array with all slug-locale combinations
 }
 
-
-export async function generateMetadata({ params: { slug, locale } }) {
-  const post = await getPost(slug, locale);
-
-  return {
-    title: post.seo_title,
-    description: post.seo_description,
-    openGraph: {
-      title: post.seo_title,
-      description: post.seo_description,
-      images: "https://nextwavead.com/images/meta.png",
-    },
-  };
-}
-
 const BlogSingle = async ({ params: { slug, locale } }) => {
+  // Fetch the post dynamically based on the slug and locale
   const post = await getPost(slug, locale);
 
-  //console.log(post);
+  if (!post) {
+    return (
+      <div>
+        <h1>Post not found</h1>
+      </div>
+    );
+  }
 
   return (
     <>
