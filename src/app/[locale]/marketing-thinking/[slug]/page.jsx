@@ -2,7 +2,7 @@ import "@/styles/blog.scss";
 import { getPost, getSlugs } from "@/utils/blogUtils";
 import React from "react";
 
-/*export async function generateStaticParams({ params: { locale } }) {
+export async function generateStaticParams({ params: { locale } }) {
   const slugs = await getSlugs(locale);
   const locales = ["en", "it", "de"];
 
@@ -13,8 +13,8 @@ import React from "react";
     });
   });
 
-  return params;
-}*/
+  return slugs;
+}
 
 export async function generateMetadata({ params: { slug, locale } }) {
   const post = await getPost(slug, locale);
