@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/utils/animations";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 const SolutionTab1 = () => {
   return (

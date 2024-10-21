@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "@/styles/header.scss";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { usePathname } from "next/navigation";
 import Facebook from "@/icons/social/Facebook";
 import Instagram from "@/icons/social/Instagram";

@@ -4,7 +4,7 @@ import { fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Linkedin from "@/icons/social/Linkedin";
 import YouTube from "@/icons/social/YouTube";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import X from "@/icons/social/X";
 import TikTok from "@/icons/social/TikTok";
 import Instagram from "@/icons/social/Instagram";

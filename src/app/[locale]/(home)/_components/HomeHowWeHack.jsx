@@ -3,7 +3,7 @@ import React from "react";
 import "@/styles/home/homeHowWeHack.scss";
 import { fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import ButtonArrow from "@/icons/ButtonArrow";
 import { useTranslations } from "next-intl";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "@/styles/footer.scss";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import Facebook from "@/icons/social/Facebook";
 import Instagram from "@/icons/social/Instagram";
 import X from "@/icons/social/X";

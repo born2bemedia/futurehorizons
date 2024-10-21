@@ -3,7 +3,7 @@ import "@/styles/home/homeRecentAnalytics.scss";
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/utils/animations";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import ButtonArrow from "@/icons/ButtonArrow";
 import { useTranslations } from "next-intl";
 

@@ -3,7 +3,7 @@ import React from "react";
 import "@/styles/home/homeWhy.scss";
 import { fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { Parallax } from "react-parallax";
 import { useTranslations } from "next-intl";
 

@@ -3,7 +3,7 @@ import "@/styles/home/homeSolutions.scss";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/utils/animations";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import ButtonArrow from "@/icons/ButtonArrow";
 import SolutionTab1 from "./solutionsTabs/SolutionTab1";
 import SolutionTab2 from "./solutionsTabs/SolutionTab2";
