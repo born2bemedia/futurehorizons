@@ -45,6 +45,15 @@ header {
             font-size: rem(12);
           }
         }
+        .lang-switcher{
+          display: flex;
+          gap:rem(10);
+          a{
+            &.active{
+              color: #eb6418;
+            }
+          }
+        }
         .soc {
           display: flex;
           align-items: center;
@@ -167,7 +176,15 @@ header {
       }
     }
   }
-
+  .lang-switcher{
+    display: flex;
+    gap:rem(10);
+    a{
+      &.active{
+        color: #eb6418;
+      }
+    }
+  }
   .contact-row {
     display: flex;
     flex-direction: column;

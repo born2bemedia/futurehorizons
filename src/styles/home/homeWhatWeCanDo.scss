@@ -63,6 +63,7 @@
         }
       }
       &.banner {
+        padding: rem(20);
         gap: rem(32);
         width: calc(50% - rem(15));
         background-color: #222222;
@@ -77,11 +78,11 @@
           font-size: rem(24);
           font-weight: 600;
           color: #ffffff;
-          br{
+          br {
             display: none;
           }
           @media (max-width: rem(992)) {
-            br{
+            br {
               display: block;
             }
           }

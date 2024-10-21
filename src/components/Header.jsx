@@ -6,10 +6,13 @@ import { usePathname } from "next/navigation";
 import Facebook from "@/icons/social/Facebook";
 import Instagram from "@/icons/social/Instagram";
 import X from "@/icons/social/X";
+import LanguageChanger from "./LanguageChanger";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("header");
 
   const menuOpen = () => {
     setMenuOpened(!menuOpened);
@@ -32,15 +35,23 @@ const Header = () => {
 
             <div className="header-right">
               <div className="contact-row">
+                <LanguageChanger />
+
                 <Link href="mailto:info@nextwavead.com">
                   info@nextwavead.com
                 </Link>
                 <Link href="tel:+35924373071">+35924373071</Link>
                 <div className="soc">
-                  <Link href="https://www.facebook.com/nextwavead/" target="_blank">
+                  <Link
+                    href="https://www.facebook.com/nextwavead/"
+                    target="_blank"
+                  >
                     <Facebook />
                   </Link>
-                  <Link href="https://www.instagram.com/nextwavead/" target="_blank">
+                  <Link
+                    href="https://www.instagram.com/nextwavead/"
+                    target="_blank"
+                  >
                     <Instagram />
                   </Link>
                   <Link href="https://x.com/nextwavead" target="_blank">
@@ -50,13 +61,13 @@ const Header = () => {
               </div>
 
               <nav>
-                <Link href="/solutions">Solutions</Link>
-                <Link href="/all-services">All services</Link>
-                <Link href="/experts">Experts</Link>
-                <Link href="/get-a-proposal">Get a proposal</Link>
-                <Link href="/how-we-work">How we work</Link>
-                <Link href="/marketing-thinking">Marketing thinking</Link>
-                <Link href="/contact-us">Contact us</Link>
+                <Link href="/solutions">{t("solutions")}</Link>
+                <Link href="/all-services">{t("services")}</Link>
+                <Link href="/experts">{t("experts")}</Link>
+                <Link href="/get-a-proposal">{t("proposal")}</Link>
+                <Link href="/how-we-work">{t("howWeWork")}</Link>
+                <Link href="/marketing-thinking">{t("marketing")}</Link>
+                <Link href="/contact-us">{t("contact")}</Link>
               </nav>
             </div>
 
@@ -73,13 +84,13 @@ const Header = () => {
       <div className={`menu-wrap ${menuOpened ? "opened" : ""}`}>
         <div className="_container">
           <nav>
-            <Link href="/solutions">Solutions</Link>
-            <Link href="/all-services">All services</Link>
-            <Link href="/experts">Experts</Link>
-            <Link href="/get-a-proposal">Get a proposal</Link>
-            <Link href="/how-we-work">How we work</Link>
-            <Link href="/marketing-thinking">Marketing thinking</Link>
-            <Link href="/contact-us">Contact us</Link>
+            <Link href="/solutions">{t("solutions")}</Link>
+            <Link href="/all-services">{t("services")}</Link>
+            <Link href="/experts">{t("experts")}</Link>
+            <Link href="/get-a-proposal">{t("proposal")}</Link>
+            <Link href="/how-we-work">{t("howWeWork")}</Link>
+            <Link href="/marketing-thinking">{t("marketing")}</Link>
+            <Link href="/contact-us">{t("contact")}</Link>
           </nav>
           <div className="contact-row">
             <Link href="mailto:info@nextwavead.com">info@nextwavead.com</Link>
@@ -88,13 +99,17 @@ const Header = () => {
               <Link href="https://www.facebook.com/nextwavead/" target="_blank">
                 <Facebook />
               </Link>
-              <Link href="https://www.instagram.com/nextwavead/" target="_blank">
+              <Link
+                href="https://www.instagram.com/nextwavead/"
+                target="_blank"
+              >
                 <Instagram />
               </Link>
               <Link href="https://x.com/nextwavead" target="_blank">
                 <X />
               </Link>
             </div>
+            <LanguageChanger />
           </div>
         </div>
       </div>

@@ -4,9 +4,11 @@ import Link from "next/link";
 import Facebook from "@/icons/social/Facebook";
 import Instagram from "@/icons/social/Instagram";
 import X from "@/icons/social/X";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const t = useTranslations("footer");
 
   return (
     <footer>
@@ -22,10 +24,10 @@ const Footer = () => {
               </div>
               <ul>
                 <li>
-                  <b>Office address:</b> 46 Alabin street, 4th floor, 1000 Sofia
+                  <b>{t("officeAddress")}:</b> 46 Alabin street, 4th floor, 1000 Sofia
                   Center, Sofia, Bulgaria
                   <br />
-                  <b>Registered address:</b> Studentski District, 91B Metodi
+                  <b>{t("registeredAddress")}:</b> Studentski District, 91B Metodi
                   Andonov str., entr. A, ap. 14, Sofia 1797, Bulgaria
                 </li>
                 <li>
@@ -52,41 +54,41 @@ const Footer = () => {
             <div className="right">
               <ul>
                 <li>
-                  <Link href="/solutions">Solutions</Link>
+                  <Link href="/solutions">{t("solutions")}</Link>
                 </li>
                 <li>
-                  <Link href="/all-services">All services</Link>
+                  <Link href="/all-services">{t("services")}</Link>
                 </li>
                 <li>
-                  <Link href="/get-a-proposal">Get a proposal</Link>
+                  <Link href="/get-a-proposal">{t("proposal")}</Link>
                 </li>
                 <li>
-                  <Link href="/contact-us">Contact us</Link>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <Link href="/experts">Experts</Link>
-                </li>
-                <li>
-                  <Link href="/how-we-work">How we work</Link>
-                </li>
-                <li>
-                  <Link href="/marketing-thinking">Marketing thinking</Link>
+                  <Link href="/contact-us">{t("contact")}</Link>
                 </li>
               </ul>
               <ul>
                 <li>
-                  <Link href="/terms-and-conditions">Terms of Use</Link>
+                  <Link href="/experts">{t("experts")}</Link>
                 </li>
                 <li>
-                  <Link href="/privacy-policy">Privacy Policy</Link>
+                  <Link href="/how-we-work">{t("howWeWork")}</Link>
                 </li>
                 <li>
-                  <Link href="/cookie-policy">Cookie Policy</Link>
+                  <Link href="/marketing-thinking">{t("marketing")}</Link>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <Link href="/terms-and-conditions">{t("terms")}</Link>
                 </li>
                 <li>
-                  <Link href="/refund-policy">Refund Policy</Link>
+                  <Link href="/privacy-policy">{t("privacy")}</Link>
+                </li>
+                <li>
+                  <Link href="/cookie-policy">{t("cookie")}</Link>
+                </li>
+                <li>
+                  <Link href="/refund-policy">{t("refund")}</Link>
                 </li>
               </ul>
             </div>
@@ -95,7 +97,7 @@ const Footer = () => {
       </div>
       <div className="foot-copy">
         <div className="_container">
-          © {currentYear} Future Horizons LTD. All rights reserved.
+          © {currentYear} Future Horizons LTD. {t("copyright")}
         </div>
       </div>
     </footer>

@@ -3,20 +3,20 @@ import matter from "gray-matter";
 import { marked } from "marked";
 
 export async function getPost(slug, locale) {
-  let fileSlug = slug;
+  let folder = "blog";
   if (locale === "it") {
-    fileSlug = `IT-${slug}`;
+    folder = "blog-it";
   } else if (locale === "de") {
-    fileSlug = `DE-${slug}`;
+    folder = "blog-de";
   }
 
-  const text = await readFile(`./src/lib/blog/${fileSlug}.md`, "utf8");
+  const text = await readFile(`./src/lib/${folder}/${slug}.md`, "utf8");
   const {
     content,
     data: { title, seo_title, seo_description, thumbnail },
   } = matter(text);
   const body = marked(content);
-  return { slug: fileSlug, title, seo_title, seo_description, thumbnail, body };
+  return { slug, title, seo_title, seo_description, thumbnail, body };
 }
 
 export async function getSlugs() {
@@ -28,20 +28,20 @@ export async function getSlugs() {
 
 
 export async function getPage(slug, locale) {
-  let fileSlug = slug;
+  let folder = "policies";
   if (locale === "it") {
-    fileSlug = `IT-${slug}`;
+    folder = "policies-it";
   } else if (locale === "de") {
-    fileSlug = `DE-${slug}`;
+    folder = "policies-de";
   }
 
-  const text = await readFile(`./src/lib/policies/${fileSlug}.md`, "utf8");
+  const text = await readFile(`./src/lib/${folder}/${slug}.md`, "utf8");
   const {
     content,
     data: { title, date },
   } = matter(text);
   const body = marked(content);
-  return { slug: fileSlug, title, date, body };
+  return { slug, title, date, body };
 }
 
 export async function getPageSlugs() {

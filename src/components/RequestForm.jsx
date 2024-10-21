@@ -4,19 +4,19 @@ import * as Yup from "yup";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import useCountryCode from "@/utils/useCountryCode";
+import { useTranslations } from "next-intl";
 
 const RequestForm = () => {
+  const t = useTranslations("form");
   const countryCode = useCountryCode();
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("The field is required."),
-    lastName: Yup.string().required("The field is required."),
-    email: Yup.string()
-      .email("Please enter a valid email address.")
-      .required("The field is required."),
-    phone: Yup.string().required("The field is required."),
-    website: Yup.string().required("The field is required."),
-    your_challenge: Yup.string().required("The field is required."),
+    firstName: Yup.string().required(t("requiredError")),
+    lastName: Yup.string().required(t("requiredError")),
+    email: Yup.string().email(t("emailError")).required(t("requiredError")),
+    phone: Yup.string().required(t("requiredError")),
+    website: Yup.string().required(t("requiredError")),
+    your_challenge: Yup.string().required(t("requiredError")),
   });
 
   const initialValues = {
@@ -56,7 +56,6 @@ const RequestForm = () => {
       setStatus({ success: false });
       setSubmitting(false);
     }
-    
   };
 
   return (
@@ -78,11 +77,9 @@ const RequestForm = () => {
             <div>
               {status && status.success ? (
                 <div className="success-message">
-                  <h2>Thank you!</h2>
+                  <h2>{t("Thanks.title")}</h2>
                   <span>
-                    Your request has been successfully received. Our team will
-                    review your information and contact you shortly to discuss
-                    your marketing challenges and the solutions we can provide.
+                  {t("Thanks.text")}
                   </span>
                 </div>
               ) : (
@@ -92,7 +89,7 @@ const RequestForm = () => {
                       <Field
                         name="firstName"
                         type="text"
-                        placeholder="First name"
+                        placeholder={t("firstName")}
                         className={
                           touched.firstName && errors.firstName ? "invalid" : ""
                         }
@@ -108,7 +105,7 @@ const RequestForm = () => {
                       <Field
                         name="lastName"
                         type="text"
-                        placeholder="Last name"
+                        placeholder={t("lastName")}
                         className={
                           touched.lastName && errors.lastName ? "invalid" : ""
                         }
@@ -124,7 +121,7 @@ const RequestForm = () => {
                       <Field
                         name="email"
                         type="email"
-                        placeholder="Email"
+                        placeholder={t("email")}
                         className={
                           touched.email && errors.email ? "invalid" : ""
                         }
@@ -141,7 +138,7 @@ const RequestForm = () => {
                         country={countryCode}
                         value=""
                         onChange={(value) => setFieldValue("phone", value)}
-                        placeholder="Your phone"
+                        placeholder={t("phone")}
                         className={
                           touched.phone && errors.phone ? "invalid" : ""
                         }
@@ -153,7 +150,7 @@ const RequestForm = () => {
                       <Field
                         name="website"
                         type="text"
-                        placeholder="Company website"
+                        placeholder={t("website")}
                         className={
                           touched.website && errors.website ? "invalid" : ""
                         }
@@ -169,7 +166,7 @@ const RequestForm = () => {
                       <Field
                         name="your_challenge"
                         type="text"
-                        placeholder="Your challenge"
+                        placeholder={t("challenge")}
                         className={
                           touched.your_challenge && errors.your_challenge
                             ? "invalid"
@@ -188,7 +185,7 @@ const RequestForm = () => {
                       className="orange-button"
                       disabled={isSubmitting}
                     >
-                      Submit
+                      {t("submit")}
                     </button>
                   </Form>
                 </>

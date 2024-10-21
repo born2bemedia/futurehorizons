@@ -1,32 +1,27 @@
 "use client";
 import React from "react";
-import {
-  Formik,
-  Form,
-  Field,
-  ErrorMessage,
-} from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { usePopup } from "@/context/PopupsContext";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import useCountryCode from "@/utils/useCountryCode";
+import { useTranslations } from "next-intl";
 
 function OrderPopup() {
+  const t = useTranslations("form");
   const { orderPopupDisplay, setOrderPopupDisplay, serviceValue } = usePopup();
   const countryCode = useCountryCode();
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("The field is required."),
-    lastName: Yup.string().required("The field is required."),
-    email: Yup.string()
-      .email("Please enter a valid email address.")
-      .required("The field is required."),
-    phone: Yup.string().required("The field is required."),
-    company: Yup.string().required("The field is required."),
-    website: Yup.string().required("The field is required."),
-    message: Yup.string().required("The field is required."),
-    budget: Yup.string().required("The field is required."),
+    firstName: Yup.string().required(t("requiredError")),
+    lastName: Yup.string().required(t("requiredError")),
+    email: Yup.string().email(t("emailError")).required(t("requiredError")),
+    phone: Yup.string().required(t("requiredError")),
+    company: Yup.string().required(t("requiredError")),
+    website: Yup.string().required(t("requiredError")),
+    message: Yup.string().required(t("requiredError")),
+    budget: Yup.string().required(t("requiredError")),
   });
 
   const initialValues = {
@@ -115,17 +110,14 @@ function OrderPopup() {
                 <div className="request-form">
                   {status && status.success ? (
                     <div className="success-message">
-                      <h2>Thank you!</h2>
-                      <span>
-                        Your request has been successfully received. Our team
-                        will review your information and contact you shortly to
-                        discuss your marketing challenges and the solutions we
-                        can provide.
-                      </span>
+                      <h2>{t("Thanks.title")}</h2>
+                      <span>{t("Thanks.text")}</span>
                     </div>
                   ) : (
                     <>
-                      <h2 className="service-title">{serviceValue} Request</h2>
+                      <h2 className="service-title">
+                        {serviceValue} {t("request")}
+                      </h2>
 
                       <Form>
                         <Field
@@ -137,7 +129,7 @@ function OrderPopup() {
                           <Field
                             name="firstName"
                             type="text"
-                            placeholder="First name"
+                            placeholder={t("firstName")}
                             className={
                               touched.firstName && errors.firstName
                                 ? "invalid"
@@ -155,7 +147,7 @@ function OrderPopup() {
                           <Field
                             name="lastName"
                             type="text"
-                            placeholder="Last name"
+                            placeholder={t("lastName")}
                             className={
                               touched.lastName && errors.lastName
                                 ? "invalid"
@@ -173,7 +165,7 @@ function OrderPopup() {
                           <Field
                             name="email"
                             type="email"
-                            placeholder="Email"
+                            placeholder={t("email")}
                             className={
                               touched.email && errors.email ? "invalid" : ""
                             }
@@ -190,7 +182,7 @@ function OrderPopup() {
                             country={countryCode}
                             value=""
                             onChange={(value) => setFieldValue("phone", value)}
-                            placeholder="Your phone"
+                            placeholder={t("phone")}
                             className={
                               touched.phone && errors.phone ? "invalid" : ""
                             }
@@ -202,7 +194,7 @@ function OrderPopup() {
                           <Field
                             name="company"
                             type="text"
-                            placeholder="Company name"
+                            placeholder={t("company")}
                             className={
                               touched.company && errors.company ? "invalid" : ""
                             }
@@ -218,7 +210,7 @@ function OrderPopup() {
                           <Field
                             name="website"
                             type="text"
-                            placeholder="Company website"
+                            placeholder={t("website")}
                             className={
                               touched.website && errors.website ? "invalid" : ""
                             }
@@ -234,7 +226,7 @@ function OrderPopup() {
                           <Field
                             name="budget"
                             type="text"
-                            placeholder="Budget"
+                            placeholder={t("budget")}
                             className={
                               touched.budget && errors.budget ? "invalid" : ""
                             }
@@ -250,7 +242,7 @@ function OrderPopup() {
                           <Field
                             name="message"
                             type="text"
-                            placeholder="Message"
+                            placeholder={t("message")}
                             className={
                               touched.message && errors.message ? "invalid" : ""
                             }
@@ -267,7 +259,7 @@ function OrderPopup() {
                           className="orange-button"
                           disabled={isSubmitting}
                         >
-                          Submit
+                          {t("submit")}
                         </button>
                       </Form>
                     </>
