@@ -2,21 +2,21 @@ import "@/styles/blog.scss";
 import { getPost, getSlugs } from "@/utils/blogUtils";
 import React from "react";
 
-export async function generateStaticParams({ params: { locale } }) {
-  const slugs = await getSlugs(locale);
-  const locales = ["en", "it", "de"];
-
+export async function generateStaticParams() {
+  const locales = ["en", "it", "de"]; // List of locales
   const params = [];
-  slugs.forEach((slug) => {
-    if (!slug.startsWith("IT-") && !slug.startsWith("DE-")) {
-      locales.forEach((locale) => {
-        params.push({ slug, locale });
-      });
-    }
-  });
 
-  return slugs;
+  for (const locale of locales) {
+    const slugs = await getSlugs(locale); // Fetch slugs for the locale
+
+    slugs.forEach((slug) => {
+      params.push({ slug, locale }); // Create params for each slug and locale
+    });
+  }
+
+  return params; // Return the params array with all slug-locale combinations
 }
+
 
 export async function generateMetadata({ params: { slug, locale } }) {
   const post = await getPost(slug, locale);
