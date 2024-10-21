@@ -1,29 +1,41 @@
-"use client";
 import "@/styles/blog.scss";
 import { getPost, getSlugs } from "@/utils/blogUtils";
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react";
 
-const BlogSingle = () => {
-  const router = useRouter();
-  const { slug, locale } = router.query;
+export async function generateStaticParams() {
+  const slugs = await getSlugs();
+  const locales = ["en", "it", "de"];
 
-  const [post, setPost] = useState(null);
-
-  useEffect(() => {
-    if (slug && locale) {
-      // Fetch post data after the component mounts
-      const fetchPost = async () => {
-        const postData = await getPost(slug, locale);
-        setPost(postData);
-      };
-      fetchPost();
+  const params = [];
+  slugs.forEach((slug) => {
+    if (!slug.startsWith("IT-") && !slug.startsWith("DE-")) {
+      locales.forEach((locale) => {
+        params.push({ slug, locale });
+      });
     }
-  }, [slug, locale]);
+  });
 
-  if (!post) {
-    return <div>Loading...</div>;
-  }
+  return params;
+}
+
+export async function generateMetadata({ params: { slug, locale } }) {
+  const post = await getPost(slug, locale);
+
+  return {
+    title: post.seo_title,
+    description: post.seo_description,
+    openGraph: {
+      title: post.seo_title,
+      description: post.seo_description,
+      images: "https://nextwavead.com/images/meta.png",
+    },
+  };
+}
+
+const BlogSingle = async ({ params: { slug, locale } }) => {
+  const post = await getPost(slug, locale);
+
+  //console.log(post);
 
   return (
     <>
