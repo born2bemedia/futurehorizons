@@ -20,7 +20,6 @@ export async function getPost(slug, locale) {
 }
 
 export async function getSlugs() {
-  
   const files = await readdir("./src/lib/blog");
   return files
     .filter((file) => file.endsWith(".md"))
