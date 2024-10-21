@@ -15,7 +15,7 @@ export async function generateStaticParams() {
     }
   });
 
-  return params;
+  return slugs;
 }
 
 export async function generateMetadata({ params: { slug, locale } }) {
