@@ -1,6 +1,7 @@
 import "@/styles/blog.scss";
 import { getPost, getSlugs } from "@/utils/blogUtils";
 import React from "react";
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 export async function generateStaticParams() {
   const slugs = await getSlugs();
@@ -8,11 +9,10 @@ export async function generateStaticParams() {
 
   const params = [];
   slugs.forEach((slug) => {
-    if (!slug.startsWith("IT-") && !slug.startsWith("DE-")) {
-      locales.forEach((locale) => {
-        params.push({ slug, locale });
-      });
-    }
+    locales.forEach((locale) => {
+      unstable_setRequestLocale(locale);  // Set locale statically
+      params.push({ slug, locale });
+    });
   });
 
   return params;
