@@ -8,12 +8,14 @@ export async function generateStaticParams() {
 
   const params = [];
   slugs.forEach((slug) => {
-    locales.forEach((locale) => {
-      params.push({ slug, locale });
-    });
+    if (!slug.startsWith("IT-") && !slug.startsWith("DE-")) {
+      locales.forEach((locale) => {
+        params.push({ slug, locale });
+      });
+    }
   });
 
-  return slugs;
+  return params;
 }
 
 export async function generateMetadata({ params: { slug, locale } }) {

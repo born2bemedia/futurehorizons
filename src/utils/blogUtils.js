@@ -19,15 +19,9 @@ export async function getPost(slug, locale) {
   return { slug, title, seo_title, seo_description, thumbnail, body };
 }
 
-export async function getSlugs(locale) {
-  let folder = "blog";
-  if (locale === "it") {
-    folder = "blog-it";
-  } else if (locale === "de") {
-    folder = "blog-de";
-  }
-
-  const files = await readdir(`./src/lib/${folder}`);
+export async function getSlugs() {
+  
+  const files = await readdir("./src/lib/blog");
   return files
     .filter((file) => file.endsWith(".md"))
     .map((file) => file.slice(0, -".md".length));
