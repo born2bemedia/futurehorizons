@@ -5,7 +5,7 @@ import {unstable_setRequestLocale} from 'next-intl/server';
 
 export async function generateStaticParams() {
   const slugs = await getSlugs(); // Fetch all slugs
-  const locales = ["en", "it", "de"]; // Define supported locales
+  const locales = ["en", "it", "de", "bg"]; // Define supported locales
 
   const params = [];
 
