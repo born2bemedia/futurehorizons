@@ -2,6 +2,7 @@ import { getPage, getPageSlugs } from "@/utils/blogUtils";
 import React from "react";
 import "@/styles/policy.scss";
 import { useLocale } from "next-intl";
+import {unstable_setRequestLocale} from 'next-intl/server';
 
 export async function generateStaticParams() {
   const slugs = await getPageSlugs();
@@ -32,6 +33,7 @@ export async function generateMetadata({ params: { locale } }) {
 }
 
 const TermsAndConditions = async ({ params: { locale } }) => {
+  unstable_setRequestLocale(locale);
   const page = await getPage("privacy-policy", locale);
   return (
     <>
