@@ -6,6 +6,7 @@ import OrderButton from "@/components/OrderButton";
 import servicesEn from "@/lib/services"; // English services
 import servicesDe from "@/lib/services-de"; // German services
 import servicesIt from "@/lib/services-it"; // Italian services
+import servicesBg from "@/lib/services-bg";
 import { useTranslations, useLocale } from "next-intl";
 
 const ServicesTabs = () => {
@@ -22,6 +23,8 @@ const ServicesTabs = () => {
         return servicesDe; // Load German services
       case "it":
         return servicesIt; // Load Italian services
+      case "bg":
+        return servicesBg;
       default:
         return servicesEn; // Default to English services
     }

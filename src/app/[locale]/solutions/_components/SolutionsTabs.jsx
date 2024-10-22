@@ -6,6 +6,7 @@ import OrderButton from "@/components/OrderButton";
 import solutions from "@/lib/solutions"; // English solutions
 import solutionsDe from "@/lib/solutions-de"; // German solutions
 import solutionsIt from "@/lib/solutions-it"; // Italian solutions
+import solutionsBg from "@/lib/solutions-bg";
 import { useTranslations, useLocale } from "next-intl";
 
 const SolutionsTabs = () => {
@@ -20,6 +21,8 @@ const SolutionsTabs = () => {
         return solutionsDe;
       case "it":
         return solutionsIt;
+      case "bg":
+        return solutionsBg;
       default:
         return solutions; // Default to English if no specific locale is found
     }

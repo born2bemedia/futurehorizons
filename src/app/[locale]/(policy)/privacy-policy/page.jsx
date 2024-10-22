@@ -5,19 +5,18 @@ import { useLocale } from "next-intl";
 
 export async function generateStaticParams() {
   const slugs = await getPageSlugs();
-  const locales = ["en", "it", "de"];
-  
+  const locales = ["en", "it", "de", "bg"];
+
 
   const params = [];
+
   slugs.forEach((slug) => {
-    if (!slug.startsWith("IT-") && !slug.startsWith("DE-")) {
-      locales.forEach((locale) => {
-        params.push({ slug, locale });
-      });
-    }
+    locales.forEach((locale) => {
+      params.push({ slug, locale });
+    });
   });
 
-  return slugs;
+  return params;
 }
 
 export async function generateMetadata({ params: { locale } }) {

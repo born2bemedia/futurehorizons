@@ -8,6 +8,8 @@ export async function getPost(slug, locale) {
     folder = "blog-it";
   } else if (locale === "de") {
     folder = "blog-de";
+  } else if (locale === "bg") {
+    folder = "blog-bg";
   }
 
   const text = await readFile(`./src/lib/${folder}/${slug}.md`, "utf8");
@@ -33,6 +35,8 @@ export async function getPage(slug, locale) {
     folder = "policies-it";
   } else if (locale === "de") {
     folder = "policies-de";
+  } else if (locale === "bg") {
+    folder = "policies-bg";
   }
 
   const text = await readFile(`./src/lib/${folder}/${slug}.md`, "utf8");

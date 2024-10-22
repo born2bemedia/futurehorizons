@@ -33,6 +33,12 @@ export default function LanguageChanger() {
       >
         IT
       </button>
+      <button
+        onClick={() => handleChange("bg")}
+        className={locale === "bg" ? "active" : ""}
+      >
+        BG
+      </button>
 
       <style jsx>{`
         button {
