@@ -4,12 +4,12 @@ header {
   padding: rem(24) 0;
   border-bottom: rem(1) solid #ffffff33;
   height: rem(98);
-  margin-bottom: - rem(98);
+  margin-bottom: -98px;
   position: relative;
   z-index: 999;
   @media (max-width: rem(992)) {
     height: rem(90);
-    margin-bottom: - rem(90);
+    margin-bottom: -90px;
   }
   .header-row {
     display: flex;
@@ -28,6 +28,7 @@ header {
       @media (max-width: rem(992)) {
         display: none;
       }
+
       .contact-row {
         display: flex;
         align-items: center;
@@ -45,15 +46,7 @@ header {
             font-size: rem(12);
           }
         }
-        .lang-switcher{
-          display: flex;
-          gap:rem(10);
-          a{
-            &.active{
-              color: #eb6418;
-            }
-          }
-        }
+
         .soc {
           display: flex;
           align-items: center;
@@ -135,6 +128,61 @@ header {
         display: flex;
       }
     }
+
+    .mob-lang {
+      display: none;
+      @media (max-width: rem(992)) {
+        display: flex;
+        margin-right: -30px;
+      }
+      .lang-switcher {
+        >button{
+          img{
+            width: 30px;
+          }
+        }
+        .switcher-popup {
+          right: 0;
+        }
+      }
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: rem(10);
+      position: relative;
+
+      > button {
+        margin: 0;
+      }
+      .switcher-popup {
+        display: none;
+        flex-direction: column;
+        gap: rem(15);
+        background: #f5f5f5;
+        position: absolute;
+        top: calc(100% + 8px);
+        padding: rem(10);
+        border-radius: rem(6);
+        width: rem(100);
+        &.opened {
+          display: flex;
+        }
+        button {
+          display: flex;
+          align-items: center;
+          gap: rem(6);
+          font-size: 12px;
+          font-weight: 300;
+          line-height: 1;
+          text-align: left;
+          color: #0b0b0b;
+          &.active {
+            font-weight: 600;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -176,11 +224,11 @@ header {
       }
     }
   }
-  .lang-switcher{
+  .lang-switcher {
     display: flex;
-    gap:rem(10);
-    a{
-      &.active{
+    gap: rem(10);
+    a {
+      &.active {
         color: #eb6418;
       }
     }

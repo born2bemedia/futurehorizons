@@ -71,6 +71,10 @@ const Header = () => {
               </nav>
             </div>
 
+            <div className="mob-lang">
+              <LanguageChanger />
+            </div>
+
             <span onClick={() => menuOpen()} className="menu-btn">
               {!menuOpened ? (
                 <img src="/images/menu-buger.svg" alt="menu-buger" />
