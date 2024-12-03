@@ -34,7 +34,7 @@ const ContactDirectly = () => {
             variants={fadeInUp}
           >
             <div className="soc">
-              <Link href="https://www.facebook.com/nextwavead/" target="_blank">
+              <Link href="https://www.facebook.com/nextwaveadcom/" target="_blank">
                 <Facebook />
               </Link>
               <Link
