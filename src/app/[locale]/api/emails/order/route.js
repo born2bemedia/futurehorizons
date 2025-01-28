@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 const nodemailer = require("nodemailer");
+const { google } = require("googleapis");
 
 export async function POST(request) {
   try {
@@ -7,15 +8,31 @@ export async function POST(request) {
     const bodyJSON = JSON.parse(requestBody);
     const { firstName, lastName, email, phone, service, budget, company, website, message } = bodyJSON;
 
-    // Configure nodemailer with Gmail SMTP
+    // OAuth2 Configuration
+    const CLIENT_ID = process.env.GMAIL_CLIENT_ID;
+    const CLIENT_SECRET = process.env.GMAIL_CLIENT_SECRET;
+    const REFRESH_TOKEN = process.env.GMAIL_REFRESH_TOKEN;
+    const REDIRECT_URI = "https://developers.google.com/oauthplayground";
+
+    const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+    oauth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+
+    // Get Access Token
+    const accessToken = await oauth2Client.getAccessToken();
+
+    // Configure nodemailer with OAuth2
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
+        type: "OAuth2",
         user: process.env.EMAIL_USER, // Your Gmail email
-        pass: process.env.EMAIL_PASS, // Your Gmail password or app password
+        clientId: CLIENT_ID,
+        clientSecret: CLIENT_SECRET,
+        refreshToken: REFRESH_TOKEN,
+        accessToken: accessToken.token,
       },
       tls: {
-        rejectUnauthorized: false, // This bypasses the certificate validation
+        rejectUnauthorized: false, // This bypasses certificate validation
       },
     });
 
@@ -54,10 +71,10 @@ export async function POST(request) {
     </tr>
   </tbody>
   <tfoot >
-				<td style="padding: 24px 40px;background: #222222;background-size:cover;font-size: 20px;text-decoration: none;color: #ffffff;text-align: center;">
-					Thanks for using <a href="https://nextwavead.com/" style="color: #fff;font-size: 20px;text-decoration: none;color: #EB6418;">Next Wave Ad</a>
-				</td>
-			  </tfoot>
+        <td style="padding: 24px 40px;background: #222222;background-size:cover;font-size: 20px;text-decoration: none;color: #ffffff;text-align: center;">
+          Thanks for using <a href="https://nextwavead.com/" style="color: #fff;font-size: 20px;text-decoration: none;color: #EB6418;">Next Wave Ad</a>
+        </td>
+      </tfoot>
 </table>
       `,
     };
