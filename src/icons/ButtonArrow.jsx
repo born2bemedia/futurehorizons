@@ -12,7 +12,7 @@ const ButtonArrow = () => {
       <path
         d="M9.32812 6L15.3281 12L9.32812 18"
         stroke="#222222"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
