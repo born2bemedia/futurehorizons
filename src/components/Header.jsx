@@ -43,7 +43,7 @@ const Header = () => {
                 <Link href="tel:+35924373071">+35924373071</Link>
                 <div className="soc">
                   <Link
-                    href="https://www.facebook.com/nextwaveadcom/"
+                    href="https://www.facebook.com/nextwaveadfuturehorizons/"
                     target="_blank"
                   >
                     <Facebook />
@@ -100,7 +100,7 @@ const Header = () => {
             <Link href="mailto:info@nextwavead.com">info@nextwavead.com</Link>
             <Link href="tel:+35924373071">+35924373071</Link>
             <div className="soc">
-              <Link href="https://www.facebook.com/nextwaveadcom/" target="_blank">
+              <Link href="https://www.facebook.com/nextwaveadfuturehorizons/" target="_blank">
                 <Facebook />
               </Link>
               <Link
