@@ -7,6 +7,7 @@ import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import useCountryCode from "@/utils/useCountryCode";
 import { useTranslations } from "next-intl";
+import { excludedCountries } from "@/utils/excludedCountries";
 
 const StepOne = ({ next }) => {
   const t = useTranslations("proposal");
@@ -147,6 +148,7 @@ const StepThree = ({ prev, country, touched, errors, setFieldValue }) => {
             onChange={(value) => setFieldValue("phone", value)}
             placeholder={t("steps.step3.fields.phone")}
             className={touched.phone && errors.phone ? "invalid" : ""}
+            excludeCountries={excludedCountries}
           />
           <ErrorMessage className="error" name="phone" component="span" />
         </div>

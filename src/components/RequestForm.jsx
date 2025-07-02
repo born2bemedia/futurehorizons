@@ -5,6 +5,7 @@ import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
 import useCountryCode from "@/utils/useCountryCode";
 import { useTranslations } from "next-intl";
+import { excludedCountries } from "@/utils/excludedCountries";
 
 const RequestForm = () => {
   const t = useTranslations("form");
@@ -142,6 +143,7 @@ const RequestForm = () => {
                         className={
                           touched.phone && errors.phone ? "invalid" : ""
                         }
+                        excludeCountries={excludedCountries}
                       />
                       <ErrorMessage name="phone" component="span" />
                     </div>
