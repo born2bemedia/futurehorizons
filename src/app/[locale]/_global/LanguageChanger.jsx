@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 export default function LanguageChanger() {
   const [switcherOpened, setSwitcherOpened] = useState(false);
-  const [activeFlag, setActiveFlag] = useState("/images/en.svg");
+  const [activeFlag, setActiveFlag] = useState("/images/bg.svg");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
