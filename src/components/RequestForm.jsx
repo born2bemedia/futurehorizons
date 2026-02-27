@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "react-phone-input-2/lib/style.css";
@@ -6,8 +6,11 @@ import PhoneInput from "react-phone-input-2";
 import useCountryCode from "@/utils/useCountryCode";
 import { useTranslations } from "next-intl";
 import { excludedCountries } from "@/utils/excludedCountries";
+import ReCaptcha from "react-google-recaptcha";
 
 const RequestForm = () => {
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
+
   const t = useTranslations("form");
   const countryCode = useCountryCode();
 
@@ -28,6 +31,10 @@ const RequestForm = () => {
     website: "",
     your_challenge: "",
   };
+
+  const onCaptchaVerify = (token) => {
+    setIsCaptchaVerified(!!token);
+  }
 
   const handleSubmit = async (
     values,
@@ -181,7 +188,7 @@ const RequestForm = () => {
                         className="error"
                       />
                     </div>
-
+                    <ReCaptcha sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY} onChange={onCaptchaVerify} />
                     <button
                       type="submit"
                       className="orange-button"
