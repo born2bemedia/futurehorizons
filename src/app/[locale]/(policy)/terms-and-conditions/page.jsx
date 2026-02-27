@@ -51,12 +51,6 @@ const TermsAndConditions = async ({ params: { locale } }) => {
         <div className="_container">
           <div className="policy-wrap__body">
             <h1>{page.title}</h1>
-            {page.date && (
-              <div className="date">
-                {update}: {page.date}
-              </div>
-            )}
-            <div className="date"></div>
             <article dangerouslySetInnerHTML={{ __html: page.body }} />
           </div>
         </div>
